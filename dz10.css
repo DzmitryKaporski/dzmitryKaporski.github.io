@@ -1,0 +1,99 @@
+body {
+    background: black;
+}
+
+.main-container__heading {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Calligraffitti', cursive;
+    color: yellow;
+    background: black;
+}
+
+.main-container-inner__wrap {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Calligraffitti', cursive;
+    border: solid 2px black;
+    color: rgb(153, 141, 141);
+    background: url(https://i.ibb.co/zFkDtHL/photoeditorsdk-export.png);
+}
+
+.main-container-inner__title {
+    background: rgba(0, 0, 0, 0.541);
+}
+
+.main-container-inner__box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    border: solid 1px;
+    background: url(https://images.wallpaperscraft.ru/image/stena_pol_svet_ten_poverhnost_50837_1920x1080.jpg);
+    background-size: 1500px 1450px;
+    background-attachment: fixed;
+}
+
+.main-container-inner__box-painting-share {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: solid 15px rgb(0, 0, 0);
+}
+
+.main-container-inner__box-painting-share:hover {
+    border: solid 15px red;
+}
+
+.main-container-inner__box-painting-share:first-child {
+    background: yellow;
+}
+
+.main-container-inner__box-painting-share:nth-child(2) {
+    background: blue;
+}
+
+.main-container-inner__box-painting-share:nth-child(3) {
+    background: blue;
+}
+
+.main-container-inner-box-painting {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: solid 15px;
+    background: yellow;
+}
+
+.main-container-inner-box-painting:hover {
+    border: solid 15px green;
+}
+
+.main-container-inner__box-painting-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main-container-inner__box-painting-share-price_red {
+    font-size: 30px;
+    background: red;
+    color: black;
+}
+
+.main-container-inner__box-painting-share-price_invalid {
+    font-size: 30px;
+    color: red;
+    text-decoration: line-through;
+}
+
+.main-container-inner__box-painting-share-price_invalid:hover {
+    background: red;
+    color: black;
+}
+
+.main-container-inner__box-painting-price {
+    font-size: 30px;
+    background: wheat;
+}
