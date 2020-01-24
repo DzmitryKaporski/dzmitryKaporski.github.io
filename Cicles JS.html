@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- ///////////////////////    The first task    ///////////////// -->
+
+    <!-- <script>
+        'use strict'
+
+        function cicles() {
+
+            let firstNumber = +prompt('Enter the first number');
+            let secondNumber = +prompt('Enter the second number');
+
+            let maxNumber = (firstNumber < secondNumber) ? secondNumber - firstNumber : firstNumber - secondNumber;
+
+            if (maxNumber > 5) {
+                while (firstNumber < secondNumber) {
+                    console.log(firstNumber++);
+                }
+                while (firstNumber > secondNumber) {
+                    console.log(firstNumber--);
+                }
+            } else {
+                alert('Range of numbers includes at least five values');
+                cicles();
+            };
+        };
+
+        cicles();
+    </script> -->
+
+    <!-- ///////////////////////    The second task    ///////////////// -->
+
+    <!-- <script>
+        'use strict'
+        let pin;
+        let puc;
+        let entryNumberPin = 0;
+        let entryNumberPuc = 0;
+
+        do {
+            entryNumberPin++;
+            pin = prompt('Enter a PINcode');
+        } while (pin != '1234' && entryNumberPin < 3);
+        if (pin === '1234') {
+            console.log('Success');
+        } else {
+            do {
+                entryNumberPuc++;
+                puc = prompt('Enter a PUCcode');
+            } while (puc != '1111' && entryNumberPuc < 3);
+            puc === '1111' ? console.log('Success') : console.log('Sim card is blocked');
+        }
+
+    </script> -->
+
+    <!-- ///////////////////////    The third task    ///////////////// -->
+
+    <!-- <script>
+        'use strict'
+
+        let num = +prompt('Enter the first number');
+        let numSecond = +prompt('Enter the second number');
+        while (num <= numSecond) {
+            valueNumber()
+            num++;
+        }
+        while (num > numSecond) {
+            valueNumber()
+            num--;
+        }
+
+        function valueNumber() {
+            let resultFractionalNofractional = (num % 1 == 0) ? ' недробное, ' : 'дробное,';
+            let resultEvenOld = (num % 2 == 0) ? ' чётное, ' : ' нечётное, ';
+            let resultPlusMinus = (num > 0) ? ' положительное, ' : (num < 0) ? ' отрицательное,' : ' равно нулю,';
+            let resultMoreLess = (num < 100) ? ' меньше 100! ' : (num > 100) ? ' больше 100! ' : ' равно 100! ';
+            console.log(num + resultPlusMinus + resultEvenOld + resultFractionalNofractional +
+                resultMoreLess);
+        }
+    </script> -->
+
+    <!-- ///////////////////////    The fourth task    ///////////////// -->
+
+    <!-- <script>
+        'use strict';
+        let numFirst = prompt('Enter the first number');
+        let numSecond = prompt('Enter the second number');
+        let numberOfIterations = 0;
+
+        while (numFirst < numSecond && numberOfIterations < 7) {
+            console.log(numFirst++);
+            numberOfIterations++;
+        }
+        while (numFirst > numSecond && numberOfIterations < 7) {
+            console.log(numFirst--);
+            numberOfIterations++;
+        }
+    </script> -->
+
+</body>
+
+</html>
