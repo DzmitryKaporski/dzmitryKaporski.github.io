@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- ///////////////////////    The first task    ///////////////// -->
+    <!-- `Напишите функцию сокращения, которая принимает в качестве параметра строку
+    текста, сокращает ее до длины в 30 символов, заканчивает ее многоточием и возвращает
+    итоговый результат.` -->
+
+    <!-- <script>
+        'use strict'
+        let firstString = 'So many men, so many minds.  (Сколько людей столько и мнений.)'
+        let secondString = 'Because they could stand that these were not monsters.';
+        let thirdString = 'And I want to remember it. I never want to forget it.';
+
+        function stringFormatting(firstString) {
+            let begin = firstString.slice(0, 30);
+            let finish = '...';
+            return begin + finish;
+        };
+        console.log(stringFormatting(firstString));
+        console.log(stringFormatting(secondString));
+        console.log(stringFormatting(thirdString));
+    </script> -->
+
+    <!-- ///////////////////////    The second task    ///////////////// -->
+    <!-- `Напишите функцию, которая "инвертирует" регистр введенной строки. Другими
+    словами, меняет большие буквы на маленькие и наоборот.` -->
+
+    <!-- <script>
+        'use strict'
+
+        let firstSentence = 'Follow the white raBbiT';
+        let secondSentence = 'Call me Ishmael';
+        let thirdSentence = 'Repent before bloody rabbit punish you!';
+
+        function styleFormat(string) {
+            let newString = '';
+            let stringLength = string.length;
+            for (let i = 0; i < stringLength; i++) {
+                if (string[i] === string[i].toUpperCase()) {
+                    newString += string[i].toLowerCase();
+                } else {
+                    newString += string[i].toUpperCase();
+                };
+            };
+            return newString;
+        };
+
+        console.log(styleFormat(firstSentence));
+        console.log(styleFormat(secondSentence));
+        console.log(styleFormat(thirdSentence));
+    </script> -->
+
+    <!-- ///////////////////////    The third task    ///////////////// -->
+    <!-- `Напишите функицию, которая принимает в качестве параметра текст (строку) и
+    анализирует ее на количество символов без пробелов, количество слов и определяет
+    характер предложения (вопросительное, отрицательное, утвердительное).
+    Если тип предлоежния не удалось пределить, присвоить свойству значение
+    null.` -->
+
+    <!-- <script>
+        'use strict'
+        let firstString = `I'am here.`;
+        let secondString = `Where are you?`;
+        let thirdString = `I don't hera.`;
+        let fourthString = `I'm going!`;
+        let fiveString = `I'm going,`;
+        let sixString = `I'm going`;
+
+
+        function lineAnalysis(str) {
+
+            let allSymbols = str.length;
+
+            let theNumberOfSpaces = (str.split(' ').length - 1);
+            let symbolsWithoutSpaces = str.length - theNumberOfSpaces;
+
+            let quantityOfWords = theNumberOfSpaces + 1;
+
+            let theLastValue = (str[str.length - 1]);
+
+            let not = (str.includes(`don't`));
+
+            let sentenceType = (theLastValue === '?') ? 'question' : (theLastValue === '!') ? 'statement' : (not === true) ? 'denial' : (theLastValue === '.') ? 'statement' :
+                'null';
+
+            let object = {
+                allSymbols: allSymbols,
+                symbolsWithoutSpaces: symbolsWithoutSpaces,
+                quantityOfWords: quantityOfWords,
+                theNumberOfSpaces: theNumberOfSpaces,
+                sentenceType: sentenceType,
+            }
+            return object
+        }
+        console.log(lineAnalysis(firstString));
+        console.log(lineAnalysis(secondString));
+        console.log(lineAnalysis(thirdString));
+        console.log(lineAnalysis(fourthString));
+        console.log(lineAnalysis(fiveString));
+        console.log(lineAnalysis(sixString));
+
+
+        // console.log('количество всех символов в строке = ' +  allSymbols)
+        // console.log('количество символов без пробелов, в строке = ' +  symbolsWithoutSpaces)
+        // console.log('количество слов в строке = ' + quantityOfWords)
+        // console.log('количество пробелов в строке = ' + theNumberOfSpaces)
+        // console.log('тип предложения - ' + sentenceType)
+    </script> -->
+
+    <!-- ///////////////////////    The fourth task    ///////////////// -->
+    <!-- `Напишите функцию модерации, которая принимает в качестве параметров
+    предложение (строку) текста и запрещенное слово, и при наличии в предложении
+    запрещенного слова в любом регистре, заменяет его символы на астериксы ('звездочки')
+    - * и возвращает измененное предложение.
+    В случае, если запрещенного слова в предложении нет, возвращает предложение без
+    изменений.
+    ` -->
+
+    <!-- <script>
+        'use strict'
+        let string1 = 'xWxwXw Follow the white xWxwXw';
+        let string2 = 'Call me Ishmael';
+        let string3 = 'Repent before bloody xWxwXw punish you!';
+        let string4 = 'xWxwXwRepent     xWxwXw   before sdgxWxwXwbloody xWxwXw punish you!';
+        let string5 = 'xW Repent  xW  xW beforexW sdgxWloody xW punish you!';
+
+        let bannedWordLowercase = 'xwxwxw';
+        let bannedWordLowercase2 = 'xw';
+
+        function moderation(string, bannedWord) {
+
+            let stringLowercase = string.toLowerCase();
+            if (stringLowercase.includes(bannedWord)) {
+                let bannedWordStar = '';
+                let lengthBannedWord = bannedWord.length;
+                for (let i = 0; i < lengthBannedWord; i++) {
+                    bannedWordStar += '*';
+                };
+
+                let arrStringLowercase = stringLowercase.split(' ');
+                let indexBannedWord;
+
+                do {
+                    indexBannedWord = arrStringLowercase.indexOf(bannedWord);
+                    arrStringLowercase.splice(indexBannedWord, 1, bannedWordStar);
+                    indexBannedWord = arrStringLowercase.indexOf(bannedWord);
+                } while (indexBannedWord >= 0);
+
+                let newString1 = arrStringLowercase.join(' ');
+
+                let newString2 = '';
+                let stringLength1 = newString1.length;
+                for (let i = 0; i < stringLength1; i++) {
+                    if (string[i] === newString1[i]) {
+                        newString2 += newString1[i].toLowerCase();
+                    } else {
+                        newString2 += newString1[i].toUpperCase();
+                    };
+                };
+                return newString2;
+            } else {
+                return string;
+            };
+        };
+
+        console.log(moderation(string1, bannedWordLowercase));
+        console.log(moderation(string2, bannedWordLowercase));
+        console.log(moderation(string3, bannedWordLowercase));
+        console.log(moderation(string4, bannedWordLowercase));
+        console.log(moderation(string5, bannedWordLowercase2));
+    </script> -->
+
+    <!-- <button id='button'><h2>Click me</h2></button>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        let button = document.getElementById('button');
+        button.addEventListener('click', function () {
+            swal(`Тех, кто презирает программистов, 
+            программисты презирают сильнее, чем те, 
+            кто презирает тех программистов, которые
+             презирают тех, кто их презирает.`)
+                .then((value) => {
+                    swal(`Если ты понял предыдущее — то ты программист.`);
+                });
+        });
+    </script> -->
+
+</body>
+
+</html>
