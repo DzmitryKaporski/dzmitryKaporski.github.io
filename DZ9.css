@@ -45,7 +45,7 @@ body {
 }
 
 .heading-box__wrapper {
-    height: 630px;
+    height: 830px;
     margin-top: 70px;
     background: url(https://i.ibb.co/hZvN6Kb/imgonline-com-ua-Resize-3-ICx-LLj-EOss0-IEa1111.jpg);
     background-size: cover;
@@ -62,7 +62,7 @@ body {
     align-items: center;
     text-align: center;
     justify-content: space-around;
-    height: 630px;
+    height: 830px;
     color: white;
     background: rgba(10, 4, 41, 0.507);
 }
@@ -170,8 +170,8 @@ body {
 }
 
 .about-section__img-mobile {
-    height: auto;
-    width: 100%;
+    height: 108%;
+    width: 80%;
 }
 
 @media (max-width: 1600px) {
