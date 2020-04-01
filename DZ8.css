@@ -1,12 +1,13 @@
 body {
     background: url(https://www.soyuz.ru/public/uploads/files/5/7205544/1005x558_20180521150625c8710022c9.jpg);
+    background-size: cover;
     background-attachment: fixed;
 }
 
 .main-container__page-wrapper {
     width: 500px;
     height: auto;
-    margin-left: 30%;
+    margin-left: 35%;
     margin-top: 10px;
     background: rgba(0, 0, 0, 0.699);
     border: solid 1px black;
