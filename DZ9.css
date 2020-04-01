@@ -49,6 +49,7 @@ body {
     margin-top: 70px;
     background: url(https://i.ibb.co/hZvN6Kb/imgonline-com-ua-Resize-3-ICx-LLj-EOss0-IEa1111.jpg);
     background-size: cover;
+    background-position: center center;
 }
 
 @media (max-width: 900px) {
