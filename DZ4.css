@@ -1,5 +1,7 @@
 body {
-    background: rgb(231, 225, 225);
+    background: url(https://imgclf.112.ua/original/2015/08/11/176340.jpg?timestamp=1439268323);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .part {
@@ -29,6 +31,6 @@ body {
     position: fixed;
     right: 45px;
     bottom: 45px;
-    color: black;
-    border: solid 1px;
+    color: rgba(255, 255, 255, 0.431);
+    border: solid 5px;
 }
