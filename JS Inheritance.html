@@ -157,7 +157,13 @@
         });
     </script>
 
-    <script>
+    <p>
+        <button id='reload' onclick="location.reload()">
+            <h1>Reload the page</h1>   
+        </button>
+    </p>
+
+    <script inheritance>
         'use strict';
         class RetroCar {
             constructor(modelCar, nameAuto, colorCar, yearOfIssue) { // constructor - template to create an object
@@ -246,6 +252,14 @@
             }
         };
         const flyingAuto = new FlyingCar('Flying car', 'BMW', 'white', '2030', false, 'five hours');
+    </script>
+
+    <script>
+        'use strict';
+        const body = document.body;
+        const сollectionOfElemets = body.children;
+        reload.style.background = 'rgba(0, 128, 0, 0.349)';
+        console.log(сollectionOfElemets[15]);
     </script>
 </body>
 
