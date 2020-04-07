@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    
     <button id='button0'>
         <h2>Inheritance chain</h2>
     </button>
@@ -17,17 +18,18 @@
     <script>
         'use strict';
         let button0 = document.getElementById('button0');
+        button0.style.border = 'solid 2px blue';
+        button0.style.width = '200px';
         button0.addEventListener('click', function () {
             swal(`Цепочка наследования состоящая из четырёх классов`)
                 .then(() => {
-                    console.log(
-                        `class RetroCar => class ModernCar extends RetroCar =>  class ElectroCar extends ModernCar => class FlyingCar extends ElectroCar`
-                    );
-                    console.log(' '); // Empty drain for better readability
                     console.log(retroAuto); // Call 'retroAuto' new object with properties and parameters 'RetroCar'
                     console.log(modernAuto); // Call 'modernAuto' new object with properties and parameters 'ModernCar & RetroCar'
                     console.log(electroAuto); // Call 'electroAuto' new object with properties and parameters 'ElectroCar & ModernCar & RetroCar'
                     console.log(flyingAuto); // Call 'flyingAuto' new object with properties and parameters 'FlyingCar & ElectroCar & ModernCar & RetroCar'
+                    swal(`Inheritance chain 
+                         class RetroCar => class ModernCar extends RetroCar =>
+                         class ElectroCar extends ModernCar => class FlyingCar extends ElectroCar`);
                 });
         });
     </script>
@@ -39,29 +41,37 @@
     <script>
         'use strict';
         let button1 = document.getElementById('button1');
+        button1.style.border = 'solid 2px blue';
+        button1.style.width = '200px';
         button1.addEventListener('click', function () {
             swal(`- реализовано не менее двух статических методов;`)
                 .then(() => {
                     console.log(retroAuto);
                     console.log(RetroCar.carOwnerPresence(retroAuto)); // call a static method 
                     console.log(RetroCar.havingACarVinkoda(retroAuto)); // call a static method 
+                    swal('retroAuto have two static method');
                 });
         });
     </script>
 
     <button id='button2'>
-        <h2>Three classes have a constructor</h2>
+        <h2>Constructor</h2>
     </button>
 
     <script>
         'use strict';
         let button2 = document.getElementById('button2');
+        button2.style.border = 'solid 2px blue';
+        button2.style.width = '200px';
         button2.addEventListener('click', function () {
             swal(`- не менее трех классов должны обладать конструкторами;`)
                 .then(() => {
                     console.log(retroAuto);
                     console.log(modernAuto);
                     console.log(electroAuto);
+                    swal(`retroAuto have constructor
+                          modernAuto have constructor
+                          electroAuto have constructor`);
                 });
         });
     </script>
@@ -73,6 +83,8 @@
     <script>
         'use strict';
         let button3 = document.getElementById('button3');
+        button3.style.border = 'solid 2px blue';
+        button3.style.width = '200px';
         button3.addEventListener('click', function () {
             swal(`- в цепочке хотя бы два класса должны обладать одним или двумя собственными методами;`)
                 .then(() => {
@@ -82,9 +94,10 @@
                     retroAuto.stay(); // call stay method RetroCar class
                     retroAuto.goBack(); // call goBack method RetroCar class
                     console.log(flyingAuto);
-                    flyingAuto.toSay(); // call toSay method FlyingCar class
                     flyingAuto.fly(); // call fly method FlyingCar class
                     flyingAuto.sitDown(); // call sitDown method FlyingCar class
+                    swal(`retroAuto have four method
+                          flyingAuto have two method`);
                 });
         });
     </script>
@@ -96,6 +109,8 @@
     <script>
         'use strict';
         let button4 = document.getElementById('button4');
+        button4.style.border = 'solid 2px blue';
+        button4.style.width = '200px';
         button4.addEventListener('click', function () {
             swal(`- хотя бы один метод должен расширять метод своего предка 
             (например вызывать метод предка и потом реализовывать свою функциональность);`)
@@ -108,6 +123,7 @@
                     electroAuto.toSay(); // call toSay method ElectroCar class
                     console.log(flyingAuto);
                     flyingAuto.toSay(); // call toSay method FlyingCar class
+                    swal(`Inherited method toSay RetroCar class`);
                 });
         });
     </script>
@@ -119,10 +135,10 @@
     <script>
         'use strict';
         let button5 = document.getElementById('button5');
+        button5.style.border = 'solid 2px blue';
+        button5.style.width = '200px';
         button5.addEventListener('click', function () {
-            swal(
-                    `- минимум один класс должен обладать защищенным свойством, а также геттером и сеттером для него.`
-                )
+            swal(`- минимум один класс должен обладать защищенным свойством, а также геттером и сеттером для него.`)
                 .then(() => {
                     console.log(retroAuto);
                     console.log(retroAuto.vinCode); // call the getter method
@@ -147,6 +163,8 @@
     <script>
         'use strict';
         let button6 = document.getElementById('button6');
+        button6.style.border = 'solid 2px blue';
+        button6.style.width = '200px';
         button6.addEventListener('click', function () {
             swal({
                 title: "Good job!",
@@ -159,9 +177,18 @@
 
     <p>
         <button id='reload' onclick="location.reload()">
-            <h1>Reload the page</h1>   
+            <h1>Reload the page</h1>
         </button>
     </p>
+
+    <script>
+        'use strict';
+        reload.style.border = 'solid 4px red';
+        reload.style.width = '200px';
+        reload.style.borderRadius = '50px';
+        reload.style.color = 'white';
+        reload.style.background = 'green';
+    </script>
 
     <script inheritance>
         'use strict';
@@ -258,8 +285,7 @@
         'use strict';
         const body = document.body;
         const сollectionOfElemets = body.children;
-        reload.style.background = 'rgba(0, 128, 0, 0.349)';
-        console.log(сollectionOfElemets[15]);
+        console.log(сollectionOfElemets[16]);
     </script>
 </body>
 
