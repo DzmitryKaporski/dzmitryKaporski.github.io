@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .error {
+            font-size: 10px;
+            color: red;
+        }
+
+        .submiteButton {
+            margin: 10px 0px 10px 20px;
+            height: 50px;
+            width: 200px;
+            font-size: 20px;
+            background: green;
+            color: white;
+        }
+
+        .buttonEdit {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            border: solid 2px black;
+            font-size: 20px;
+            color: red;
+        }
+
+        .buttonDescription {
+            margin: '10px 10px 20px 20px';
+            border: solid 2px black;
+            background: green;
+            font-size: 20px;
+            color: white;
+        }
+
+        .cheapStyle {
+            display: flex;
+            flex-direction: column;
+            margin-left: 8%;
+            margin-bottom: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            width: 80%;
+            border: solid 4px grey;
+        }
+
+        .optimalStyle {
+            display: flex;
+            flex-direction: column;
+            margin-left: 8%;
+            margin-bottom: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            width: 80%;
+            border: solid 4px green;
+        }
+
+        .premiumStyle {
+            display: flex;
+            flex-direction: column;
+            margin-left: 8%;
+            margin-bottom: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            width: 80%;
+            border: solid 4px orange;
+        }
+    </style>
+
+    <script>
+        'use strict';
+        // декларируем метод appendElement, он принимает три параметра(позиция, htmlElemnt,id)
+        const appendElement = (position, htmlElemnt, id = null) => {
+            //создаём htmlElemnt (elem)
+            const elem = document.createElement(htmlElemnt);
+            //присваиваем свойство id для elem равное id полученному из параметров(по умолчанию id = null)
+            elem.id = id;
+            //перемещаем элемент в блок position
+            position.append(elem);
+        };
+
+        // метод для добавления инпутов в форму
+        const appendInput = (form, type, id, labelText) => {
+            //создаём контейнер div для labelText и input
+            const inputContainer = document.createElement('div');
+
+            //создаём элемент input
+            const input = document.createElement('input');
+            //добавляем атрибут type для input
+            input.setAttribute('type', type);
+            //добавляем свойство id (со значение id из параметров) для input
+            input.id = id;
+
+            if (labelText) {
+                //сзодаём label для input
+                const labelTextForInput = document.createElement('labelText');
+                //создаём атрибут 'for' с id (по id инпут связывается с labelTextForInput)
+                labelTextForInput.setAttribute('for', id);
+                //добавляем текст
+                labelTextForInput.innerText = labelText;
+                //добавляем labelText на страницу
+                inputContainer.append(labelTextForInput);
+            };
+            //добавляем input на страницу
+            inputContainer.append(input);
+
+            const arrorContainer = document.createElement('div');
+            arrorContainer.classList.add('error');
+            inputContainer.append(arrorContainer);
+
+            //добавляем inputContainer в form  на страницу
+            form.append(inputContainer);
+        };
+
+        const clearForm = (form) => {
+            for (let input of form.elements) {
+                if (input.type === 'submit') continue;
+                input.value = '';
+                formData.picture = '';
+                formData.nameInput = '';
+                formData.articleInput = '';
+                formData.countInput = '';
+                formData.praceInput = '';
+                formData.dateInput = '';
+                formData.checkbox = '';
+                formData.desc = '';
+            };
+        };
+
+        const clearSegmentFilter = (segmentFilter) => {
+            for (let input of segmentFilter.elements) {
+                formData.isCheap = '';
+                formData.isOptimal = '';
+                formData.isPremium = '';
+            };
+        };
+
+        appendElement(document.body, 'div', 'content'); // добавляем div с id = content в document.body
+        appendElement(content, 'form', 'mainForm'); // передаём form с id = mainForm в блок content
+        appendElement(content, 'div', 'cardsContainer'); // передаём div с id = cardsContainer в блок content
+
+        appendElement(mainForm, 'fieldSet', 'mainInfo');
+        appendElement(mainInfo, 'legend');
+        mainInfo.children[0].innerText = 'Main information';
+
+        appendInput(mainInfo, 'text', 'nameInput', 'Name');
+        appendInput(mainInfo, 'text', 'articleInput', 'Article');
+        appendInput(mainInfo, 'number', 'countInput', 'Сount');
+        appendInput(mainInfo, 'text', 'praceInput', 'Price');
+        appendInput(mainInfo, 'date', 'dateInput', 'Creation date');
+
+        appendElement(mainForm, 'fieldSet', 'priceSegment');
+        appendElement(priceSegment, 'legend');
+        priceSegment.children[0].innerText = 'Price segment';
+
+        appendInput(priceSegment, 'radio', 'cheap', 'Cheap');
+        cheap.name = 'priceSegment';
+        appendInput(priceSegment, 'radio', 'optimal', 'Optimal');
+        optimal.name = 'priceSegment';
+        appendInput(priceSegment, 'radio', 'premium', 'Premium');
+        premium.name = 'priceSegment';
+
+        appendElement(mainForm, 'fieldSet', 'secondaryInfo');
+        appendElement(secondaryInfo, 'legend');
+        secondaryInfo.children[0].innerText = 'Secondary information';
+
+        appendInput(secondaryInfo, 'text', 'picture', 'Picture');
+        picture.placeholder = `<img src = "https://clck.ru/NLWJA">`;
+        appendElement(secondaryInfo, 'div', 'lebelForDesc');
+        lebelForDesc.innerText = 'Description';
+        appendElement(secondaryInfo, 'textarea', 'desc');
+        desc.classList.add('input-marg');
+
+        appendElement(mainForm, 'button', 'submitButton');
+        submitButton.innerText = 'Submit';
+        submitButton.classList.add('submiteButton');
+
+        appendElement(mainForm, 'form', 'searchForm');
+        appendElement(searchForm, 'fieldSet', 'search');
+        appendElement(search, 'legend');
+        search.children[0].innerText = 'Search';
+        appendInput(search, 'text', 'searchInput', 'Search product');
+
+        appendElement(searchForm, 'fieldSet', 'segmentFilter');
+        appendElement(segmentFilter, 'legend');
+        segmentFilter.children[0].innerText = 'Filter by price segment';
+        appendInput(segmentFilter, 'checkbox', 'isCheap', 'Cheap');
+        appendInput(segmentFilter, 'checkbox', 'isOptimal', 'Optimal');
+        appendInput(segmentFilter, 'checkbox', 'isPremium', 'Premium');
+
+        appendElement(searchForm, 'fieldSet', 'sortBy');
+        appendElement(sortBy, 'legend');
+        sortBy.children[0].innerText = 'Sort by';
+        appendInput(sortBy, 'radio', 'byAlphabet', 'Alphabet');
+        byAlphabet.name = 'sortBy';
+        appendInput(sortBy, 'radio', 'byPrice', 'Price');
+        byPrice.name = 'sortBy';
+        appendInput(sortBy, 'radio', 'byCount', 'Count');
+        byCount.name = 'sortBy';
+        appendInput(sortBy, 'radio', 'byDate', 'Date');
+        byDate.name = 'sortBy';
+
+        nameInput.addEventListener('change', event => {
+            if (event.target.value.length < 5) {
+                nameInput.parentElement.children[2].innerText =
+                    'The name must contain more five characters';
+            } else {
+                nameInput.parentElement.children[2].innerText = '';
+            };
+        });
+
+        //создаём пустой объект куда будет сохраняться информация из input
+        let formData = {};
+
+        function addInputInFormData(form) {
+            for (let input of form.elements) {
+                // перебираем все input, если там будет 'submit' то мы его пропускаем
+                if (input.type === 'submit') continue
+
+                if (input.type === 'radio') {
+                    input.addEventListener('change', event => {
+                        //сохраняем в объект текущее значение radio
+                        formData[input.id] = event.target.checked;
+                    });
+                    continue
+                };
+
+                //добавляем событие change, которое переносит наши данные из input в formData
+                input.addEventListener('change', event => {
+                    formData[input.id] = event.target.value;
+                });
+            };
+        };
+        addInputInFormData(searchForm);
+        addInputInFormData(mainInfo);
+        addInputInFormData(priceSegment);
+        addInputInFormData(secondaryInfo);
+
+        mainForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const card = document.createElement('div');
+            const cardAdd = document.createElement('div');
+
+            cardAdd.innerHTML =
+                `<b><h3><p>${formData.picture === undefined ? 'No image' : formData.picture}</>
+            <p>Name: ${formData.nameInput === undefined ? '' : formData.nameInput}</p>
+            <p>Article:${formData.articleInput === undefined ? '' : formData.articleInput}</p>
+            <p>Сount:${formData.countInput === undefined ? '' : formData.countInput}</p>
+            <p>Price:${formData.praceInput === undefined ? '' : formData.praceInput}</p>
+            <p>Creation date:${formData.dateInput === undefined ? '' : formData.dateInput}</p></h3></b>`
+
+            if (formData.desc) {
+                const blockDescriptionAdd = document.createElement('blockDescription');
+
+                const buttonDeleteDescriptionAdd = document.createElement('button');
+                buttonDeleteDescriptionAdd.innerText = 'Description';
+                buttonDeleteDescriptionAdd.classList.add('buttonDescription');
+
+                buttonDeleteDescriptionAdd.setAttribute('id', 'buttonDeleteDescriptionAdd');
+                cardAdd.append(buttonDeleteDescriptionAdd);
+
+
+                buttonDeleteDescriptionAdd.addEventListener('click', () => {
+                    blockDescriptionAdd.style.display = 'none';
+                });
+
+                blockDescriptionAdd.innerHTML = `<p>${formData.desc}</p>`;
+                cardAdd.append(blockDescriptionAdd);
+                blockDescriptionAdd.style.margin = '10px 0px 20px 20px';
+            };
+
+            card.append(cardAdd);
+
+            if (formData.cheap) {
+                card.classList.add('cheapStyle');
+                cardsContainer.append(card);
+            };
+
+            if (formData.optimal) {
+                card.classList.add('optimalStyle');
+                cardsContainer.append(card);
+            };
+
+            if (formData.premium) {
+                card.classList.add('premiumStyle');
+                cardsContainer.append(card);
+            };
+
+            clearForm(event.target);
+        });
+
+        // ------------------- II item-----------------------
+
+        searchInput.addEventListener('input', (event) => { // метод для Search input
+            console.log(event.target.value);
+        });
+
+        let arr = [];
+
+        for (let input of searchForm.elements) {
+
+            if (input.type === 'checkbox') {
+                input.addEventListener('change', event => {
+                    //сохраняем в formData текущее значение чекбокса
+                    formData[input.id] = event.target.checked;
+                });
+                continue
+            };
+
+            //добавляем событие change, которое переносит наши данные из input в formData
+            input.addEventListener('change', event => {
+                formData[input.id] = event.target.value;
+
+                let card = document.createElement('div');
+
+                let cardOptimal = document.createElement('div');
+
+                let cardPremium = document.createElement('div');
+
+                if (formData.isCheap === true) {
+
+                    function callbackCheap(item) {
+
+                        if (item.cheap === 'cheap') {
+                            card = document.createElement('div');
+                            card.classList.add('cheapStyle');
+
+                            for (let key in item) {
+                                let productCount = 'count: ' + item.count;
+
+                                if (item.count === 1) {
+                                    productCount =
+                                        '<hr><button><h3><b>Last one //  Limited number of // Last one</b></h3></button><hr>';
+                                };
+
+                                card.innerHTML =
+                                    `<b><h3><p>${item.picture === null ? 'No image' : item.picture}</p>
+                                         <p>${'name: ' + item.name}</p>
+                                         <p>${'article: ' + item.article}</p>
+                                         <p>${productCount}</p>
+                                         <p>${'price: ' + item.price}</p>
+                                         <p>${'date: ' + item.creationDate}</p></h3></b>`;
+
+                                clearSegmentFilter(segmentFilter);
+
+                                if (typeof item[key] === 'object' && !!item[key]) {
+
+                                    const description = [key] + ' : ' + item[key];
+
+                                    const blockDescription = document.createElement('blockDescription');
+
+                                    const buttonDeleteDescription = document.createElement('button');
+                                    buttonDeleteDescription.innerText = 'Description';
+                                    buttonDeleteDescription.classList.add('buttonDescription');
+
+                                    buttonDeleteDescription.setAttribute('id', 'buttonDeleteDescription');
+                                    card.append(buttonDeleteDescription);
+
+                                    buttonDeleteDescription.addEventListener('click', () => {
+                                        blockDescription.style.display = 'none';
+                                    });
+
+                                    blockDescription.innerHTML = description;
+                                    card.append(blockDescription);
+                                };
+
+                                const buttonEdit = document.createElement('button');
+                                buttonEdit.innerHTML = '<b>Edit</b>';
+                                buttonEdit.setAttribute('id', 'buttonEdit');
+                                buttonEdit.classList.add('buttonEdit');
+                                card.append(buttonEdit);
+                            };
+
+                            arr.push(item);
+
+                            cardForClearCheap.append(card);
+                            productCards.append(cardForClearCheap);
+                        };
+                    };
+                    arrayOfProduct.filter(callbackCheap);
+                };
+
+                if (formData.isCheap === false) {
+                    cardForClearCheap.innerHTML = '';
+                };
+
+                if (formData.isOptimal === true) {
+                    function callbackOptimal(item) {
+                        if (item.optimal === 'optimal') {
+
+                            cardOptimal = document.createElement('div');
+                            cardOptimal.classList.add('optimalStyle');
+
+                            for (let key in item) {
+                                let productCount = 'count: ' + item.count;
+
+                                if (item.count === 1) {
+                                    productCount =
+                                        '<hr><button><h3><b>Last one //  Limited number of // Last one</b></h3></button><hr>';
+                                };
+
+                                cardOptimal.innerHTML =
+                                    `<b><h3><p>${item.picture === null ? 'No image' :  item.picture}</p>
+                                         <p>${'name: ' + item.name}</p>
+                                         <p>${'article: ' + item.article}</p>
+                                         <p>${productCount}</p>
+                                         <p>${'price: ' + item.price}</p>
+                                         <p>${'date: ' + item.creationDate}</p></h3></b>`;
+
+                                clearSegmentFilter(segmentFilter);
+
+                                if (typeof item[key] === 'object' && !!item[key]) {
+
+                                    const description = [key] + ' : ' + item[key];
+
+                                    const blockDescription = document.createElement('blockDescription');
+
+                                    const buttonDeleteDescription = document.createElement('button');
+                                    buttonDeleteDescription.innerText = 'Description';
+                                    buttonDeleteDescription.classList.add('buttonDescription');
+
+                                    buttonDeleteDescription.setAttribute('id', 'buttonDeleteDescription');
+                                    cardOptimal.append(buttonDeleteDescription);
+
+                                    buttonDeleteDescription.addEventListener('click', () => {
+                                        blockDescription.style.display = 'none';
+                                    });
+
+                                    blockDescription.innerHTML = description;
+                                    cardOptimal.append(blockDescription);
+                                    blockDescription.style.margin = '10px 10px 20px 20px';
+                                };
+
+                                const buttonEdit = document.createElement('button');
+                                buttonEdit.innerHTML = '<b>Edit</b>';
+                                buttonEdit.setAttribute('id', 'buttonEdit');
+                                buttonEdit.classList.add('buttonEdit');
+                                cardOptimal.append(buttonEdit);
+                            };
+
+                            arr.push(item);
+
+                            cardForClearOptimal.append(cardOptimal);
+                            productCards.append(cardForClearOptimal);
+                        };
+                    };
+                    arrayOfProduct.filter(callbackOptimal);
+                };
+
+
+                if (formData.isOptimal === false) {
+                    cardForClearOptimal.innerHTML = '';
+                };
+
+                if (formData.isPremium === true) {
+                    function callbackPremium(item) {
+
+                        if (item.premium === 'premium') {
+
+                            cardPremium = document.createElement('div');
+                            cardPremium.classList.add('premiumStyle');
+
+                            for (let key in item) {
+                                let productCount = 'count: ' + item.count;
+
+                                if (item.count === 1) {
+                                    productCount =
+                                        '<hr><button><h3><b>Last one //  Limited number of // Last one</b></h3></button><hr>';
+                                };
+
+                                cardPremium.innerHTML =
+                                    `<b><h3><p>${item.picture === null ? 'No image' : item.picture}</p>
+                                         <p>${'name: ' + item.name}</p>
+                                         <p>${'article: ' + item.article}</p>
+                                         <p>${productCount}</p>
+                                         <p>${'price: ' + item.price}</p>
+                                         <p>${'date: ' + item.creationDate}</p></h3></b>`;
+
+                                clearSegmentFilter(segmentFilter);
+
+                                if (typeof item[key] === 'object' && !!item[key]) {
+
+                                    const description = [key] + ' : ' + item[key];
+
+                                    const blockDescription = document.createElement('blockDescription');
+
+                                    const buttonDeleteDescription = document.createElement('button');
+                                    buttonDeleteDescription.innerText = 'Description';
+                                    buttonDeleteDescription.classList.add('buttonDescription');
+
+                                    buttonDeleteDescription.setAttribute('id', 'buttonDeleteDescription');
+                                    cardPremium.append(buttonDeleteDescription);
+
+                                    buttonDeleteDescription.addEventListener('click', () => {
+                                        blockDescription.style.display = 'none';
+                                    });
+
+                                    blockDescription.innerHTML = description;
+                                    cardPremium.append(blockDescription);
+                                    blockDescription.style.margin = '10px 10px 20px 20px';
+                                };
+
+                                const buttonEdit = document.createElement('button');
+                                buttonEdit.innerHTML = '<b>Edit</b>';
+                                buttonEdit.setAttribute('id', 'buttonEdit');
+                                buttonEdit.classList.add('buttonEdit');
+                                cardPremium.append(buttonEdit);
+                            };
+
+                            arr.push(item);
+
+                            cardForClearPremium.append(cardPremium);
+                            productCards.append(cardForClearPremium);
+
+                        };
+                    };
+
+                    arrayOfProduct.filter(callbackPremium);
+                    // arr.sort(callbackPremium);
+                    // console.log(arr);
+                };
+
+                if (formData.isPremium === false) {
+                    cardForClearPremium.innerHTML = '';
+                };
+
+                console.log(arr);
+
+                if (formData.byCount === "on") {
+                    function sorterByCount(a, b) {
+                        if (a.count > b.count)
+                            return 1;
+                        return -1;
+                    };
+                    arr.sort(sorterByCount);
+
+                    // let arrSorterByCount = arr.sort(sorterByCount)
+
+                    // for (let i = 0; i < arrSorterByCount.length; i++) {
+                    //     const item = arrSorterByCount[i];
+
+                    //     for (let key in item) {
+                    //         let block = document.createElement('div');
+                    //         block.innerHTML =
+                    //             `<b><h3><p>${item.picture === null ? 'No image' :  item.picture}</p>
+                    //                          <p>${'name: ' + item.name}</p>
+                    //                          <p>${'article: ' + item.article}</p>
+                    //                          <p>${'count: ' + item.count}</p>
+                    //                          <p>${'price: ' + item.price}</p>
+                    //                          <p>${'date: ' + item.creationDate}</p></h3></b>`;
+
+                    //         if (item.premium === 'premium') {
+                    //             block.classList.add('premiumStyle');
+                    //         }
+                    //         productCards.append(block);
+                    //     };
+                    // };
+                };
+
+                // if (formData.byCount === "on") {
+                //     function sorterByCount(a, b) {
+                //         if (a.count > b.count)
+                //             return 1;
+                //         return -1;
+                //     };
+                //     arr.sort(sorterByCount)
+                //     console.log(arr)
+                // }
+            });
+        };
+
+
+
+        const arrayOfProduct = [{
+                picture: `<img src = "https://clck.ru/NLWJA"'>`,
+                name: 'First',
+                article: 'A1',
+                count: 1,
+                price: 100,
+                creationDate: new Date().toLocaleDateString(),
+                cheap: 'cheap',
+                optimal: null,
+                premium: null,
+            },
+
+            {
+                picture: null,
+                name: 'Second',
+                article: 'A2',
+                count: 5,
+                price: 110,
+                creationDate: new Date().toLocaleDateString(),
+                cheap: 'cheap',
+                optimal: null,
+                premium: null,
+                description: [
+                    `wwwwwwww wwwwwwwwww wwww wwwwwwwww wwwwwwwwwww wwwwwwww 
+                    wwwwwwww wwwwwwwwww wwww wwwwwwwww wwwwwwwwwww wwwwwwww
+                    wwwwwwww wwwwwwwwww wwww wwwwwwwww wwwwwwwwwww wwwwwwww
+                    wwwwwwww wwwwwwwwww wwww wwwwwwwww wwwwwwwwwww wwwwwwww`
+                ],
+            },
+
+            {
+                picture: null,
+                name: 'Third',
+                article: 'A3',
+                count: 105,
+                price: 120,
+                creationDate: new Date().toLocaleDateString(),
+                cheap: null,
+                optimal: null,
+                premium: 'premium',
+                description: [
+                    `wwwwwwww wwwwwwwwww wwww wwwwwwwww wwwwwwwwwww wwwwwwww 
+                    wwwwwwww wwwwwwwwww wwww wwwwwwwww wwwwwwwwwww wwwwwwww
+                    wwwwwwww wwwwwwwwww wwww wwwwwwwww wwwwwwwwwww wwwwwwww
+                    wwwwwwww wwwwwwwwww wwww wwwwwwwww wwwwwwwwwww wwwwwwww`
+                ],
+            },
+
+            {
+                picture: null,
+                name: 'Four',
+                article: 'A4',
+                count: 777,
+                price: 130,
+                creationDate: new Date().toLocaleDateString(),
+                cheap: null,
+                optimal: 'optimal',
+                premium: null,
+            },
+
+            {
+                picture: `<img src = "https://clck.ru/NLWJA"'>`,
+                name: 'Five',
+                article: 'A5',
+                count: 1,
+                price: 140,
+                creationDate: new Date().toLocaleDateString(),
+                cheap: null,
+                optimal: null,
+                premium: 'premium',
+            },
+        ];
+
+        let productCards = document.createElement('div');
+        document.body.append(productCards);
+
+        let cardForClearCheap = document.createElement('div');
+        document.body.append(productCards);
+        let cardForClearOptimal = document.createElement('div');
+        document.body.append(productCards);
+        let cardForClearPremium = document.createElement('div');
+        document.body.append(productCards);
+    </script>
+
+</body>
+
+</html>
