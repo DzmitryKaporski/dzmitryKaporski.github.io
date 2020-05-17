@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .error {
+            font-size: 10px;
+            color: red;
+            height: 15px;
+        }
+
+        .submiteButton {
+            margin: 10px 0px 10px 20px;
+            height: 25px;
+            width: 100px;
+            font-size: 15px;
+            background: green;
+            color: white;
+        }
+
+        .buttonEdit {
+            width: 250px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            border: solid 2px black;
+            font-size: 15px;
+            color: red;
+        }
+
+        .descriptionBlockNone {
+            display: none;
+        }
+
+        .buttonDescription {
+            width: 250px;
+            margin: '10px 10px 20px 20px';
+            border: solid 2px black;
+            background: green;
+            font-size: 15px;
+            color: white;
+        }
+
+        .buttonDelete {
+            width: 250px;
+            color: white;
+            background: red;
+            border: solid 2px black;
+        }
+
+        .cheapStyle {
+            width: 250px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: solid 4px grey;
+        }
+
+        .optimalStyle {
+            width: 250px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: solid 4px green;
+        }
+
+        .premiumStyle {
+            width: 250px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: solid 4px orange;
+        }
+
+        .editNameCount {
+            border: solid 2px red;
+            color: red;
+        }
+
+        .cardsContainer {
+            padding-left: 40%;
+
+        }
+
+        .mainForm {
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        const model = [{
+                picture: "https://clck.ru/NLWJA",
+                name: 'DDDDD',
+                article: 'A1',
+                count: 1,
+                price: 100,
+                creationDate: new Date().toLocaleDateString(),
+                priceSegment: 'cheap',
+                description: null,
+            },
+
+            {
+                picture: null,
+                name: 'BBBBB',
+                article: 'A2',
+                count: 5,
+                price: 110,
+                creationDate: new Date().toLocaleDateString(),
+                priceSegment: 'cheap',
+                description: [
+                    `wwwwwwww wwwwwwwwww wwww`
+                ],
+            },
+
+            {
+                picture: null,
+                name: 'CCCCC',
+                article: 'A3',
+                count: 105,
+                price: 120,
+                creationDate: new Date().toLocaleDateString(),
+                priceSegment: 'optimal',
+                description: [
+                    `wwwwwwww wwwwwwwwww wwww`
+                ],
+            },
+
+            {
+                picture: null,
+                name: 'AAAAA',
+                article: 'A4',
+                count: 777,
+                price: 130,
+                creationDate: new Date().toLocaleDateString(),
+                priceSegment: 'premium',
+                description: null,
+            },
+
+            {
+                picture: "https://clck.ru/NLWJA",
+                name: 'EEEEE',
+                article: 'A5',
+                count: 1,
+                price: 140,
+                creationDate: new Date().toLocaleDateString(),
+                priceSegment: 'premium',
+                description: null,
+            },
+        ];
+
+        const clearForm = (form) => {
+            for (let input of form.elements) {
+                if (input.type === 'submit') continue;
+                input.value = '';
+                formData.picture = '';
+                formData.nameInput = '';
+                formData.articleInput = '';
+                formData.countInput = '';
+                formData.praceInput = '';
+                formData.dateInput = '';
+                formData.checkbox = '';
+                formData.description = '';
+            };
+        };
+
+        const clearSegmentFilter = (segmentFilter) => {
+            for (let input of segmentFilter.elements) {
+                formData.isCheap = '';
+                formData.isOptimal = '';
+                formData.isPremium = '';
+            };
+        };
+
+        const appendElement = (position, htmlElemnt, id = null) => {
+            const elem = document.createElement(htmlElemnt);
+            elem.id = id;
+            position.append(elem);
+        };
+
+        const appendInput = (form, type, id, labelText) => {
+            const inputContainer = document.createElement('div');
+
+            const input = document.createElement('input');
+            input.setAttribute('type', type);
+            input.id = id;
+
+            if (labelText) {
+                const labelTextForInput = document.createElement('labelText');
+                labelTextForInput.setAttribute('for', id);
+                labelTextForInput.innerText = labelText;
+                inputContainer.append(labelTextForInput);
+            };
+            inputContainer.append(input);
+
+            const arrorContainer = document.createElement('div');
+            arrorContainer.classList.add('error');
+            inputContainer.append(arrorContainer);
+
+            form.append(inputContainer);
+        };
+
+        appendElement(document.body, 'div', 'content');
+        appendElement(content, 'form', 'mainForm');
+        mainForm.classList.add('mainForm');
+        appendElement(content, 'div', 'cardsContainer');
+        cardsContainer.classList.add('cardsContainer');
+
+        appendElement(mainForm, 'fieldSet', 'mainInfo');
+        appendElement(mainInfo, 'legend');
+        mainInfo.children[0].innerText = 'Main information';
+
+        appendInput(mainInfo, 'text', 'nameInput', 'Name');
+        nameInput.placeholder = 'Product';
+        nameInput.required = 'true';
+        appendInput(mainInfo, 'text', 'articleInput', 'Article');
+        articleInput.placeholder = 'A12';
+        articleInput.required = 'true';
+        appendInput(mainInfo, 'number', 'countInput', 'Сount');
+        countInput.placeholder = '0...';
+        countInput.required = 'true';
+        appendInput(mainInfo, 'text', 'praceInput', 'Price');
+        praceInput.placeholder = 'number';
+        praceInput.required = 'true';
+        appendInput(mainInfo, 'date', 'dateInput', 'Creation date');
+        dateInput.required = 'true';
+
+        appendElement(mainForm, 'fieldSet', 'priceSegment');
+        appendElement(priceSegment, 'legend');
+        priceSegment.children[0].innerText = 'Price segment';
+
+        appendInput(priceSegment, 'radio', 'cheap', 'Cheap');
+        cheap.name = 'priceSegment';
+        cheap.required = 'true';
+        appendInput(priceSegment, 'radio', 'optimal', 'Optimal');
+        optimal.name = 'priceSegment';
+        appendInput(priceSegment, 'radio', 'premium', 'Premium');
+        premium.name = 'priceSegment';
+
+        appendElement(mainForm, 'fieldSet', 'secondaryInfo');
+        appendElement(secondaryInfo, 'legend');
+        secondaryInfo.children[0].innerText = 'Secondary information';
+
+        appendInput(secondaryInfo, 'text', 'picture', 'Picture');
+        picture.placeholder = "https://clck.ru/NLWJA";
+        appendElement(secondaryInfo, 'div', 'lebelForDesc');
+        lebelForDesc.innerText = 'Description';
+        appendElement(secondaryInfo, 'textarea', 'description');
+        description.required = 'true';
+
+
+        appendElement(mainForm, 'button', 'submitButton');
+        submitButton.innerText = 'Submit';
+        submitButton.classList.add('submiteButton');
+
+        appendElement(mainForm, 'form', 'searchForm');
+        appendElement(searchForm, 'fieldSet', 'search');
+        appendElement(search, 'legend');
+        search.children[0].innerText = 'Search';
+        appendInput(search, 'text', 'searchInput', 'Search product');
+
+        appendElement(searchForm, 'fieldSet', 'segmentFilter');
+        appendElement(segmentFilter, 'legend');
+        segmentFilter.children[0].innerText = 'Filter by price segment';
+        appendInput(segmentFilter, 'checkbox', 'isCheap', 'Cheap');
+        isCheap.setAttribute('checked', 'true');
+        appendInput(segmentFilter, 'checkbox', 'isOptimal', 'Optimal');
+        isOptimal.setAttribute('checked', 'true');
+        appendInput(segmentFilter, 'checkbox', 'isPremium', 'Premium');
+        isPremium.setAttribute('checked', 'true');
+
+        appendElement(searchForm, 'fieldSet', 'sortBy');
+        appendElement(sortBy, 'legend');
+        sortBy.children[0].innerText = 'Sort by';
+        appendInput(sortBy, 'radio', 'byAlphabet', 'Alphabet');
+        byAlphabet.name = 'sortBy';
+        appendInput(sortBy, 'radio', 'byPrice', 'Price');
+        byPrice.name = 'sortBy';
+        appendInput(sortBy, 'radio', 'byCount', 'Count');
+        byCount.name = 'sortBy';
+        appendInput(sortBy, 'radio', 'byDate', 'Date');
+        byDate.name = 'sortBy';
+
+        // Validation
+
+        nameInput.addEventListener('change', event => {
+            if (event.target.value.length < 5) {
+                nameInput.parentElement.children[2].innerText =
+                    'The name must contain more five characters';
+            } else {
+                nameInput.parentElement.children[2].innerText = '';
+            };
+        });
+
+        articleInput.addEventListener('change', event => {
+            let splitArticleInput = event.target.value.split('');
+            if (splitArticleInput[0] > 'Z' || isNaN(splitArticleInput[1]) || isNaN(splitArticleInput[1])) {
+                articleInput.parentElement.children[2].innerText =
+                    '"Article" must begin with a single uppercase letter, and further contain at least two digits.';
+            } else {
+                articleInput.parentElement.children[2].innerText = '';
+            };
+        });
+
+        countInput.addEventListener('change', event => {
+            if (event.target.value < 0) {
+                countInput.parentElement.children[2].innerText =
+                    'The "number" should not have a value less than one;';
+            } else {
+                countInput.parentElement.children[2].innerText = '';
+            };
+        });
+
+        praceInput.addEventListener('change', event => {
+            if (isNaN(event.target.value)) {
+                praceInput.parentElement.children[2].innerText =
+                    'The "number" should not have a value less than one;';
+            } else {
+                praceInput.parentElement.children[2].innerText = '';
+            };
+        });
+
+        let formData = {};
+
+        let inputObject = {};
+
+        function addInputInFormData(form) {
+            for (let input of form.elements) {
+                if (input.type === 'submit') continue
+                if (input.type === 'radio') {
+                    input.addEventListener('change', event => {
+                        formData[input.id] = event.target.checked;
+                    });
+                    continue
+                };
+
+                input.addEventListener('change', event => {
+                    formData[input.id] = event.target.value;
+                    inputObject.picture = formData.picture;
+                    inputObject.name = formData.nameInput;
+                    inputObject.article = formData.articleInput;
+                    inputObject.count = formData.countInput;
+                    inputObject.price = formData.praceInput;
+                    inputObject.date = formData.dateInput;
+                    inputObject.description = formData.description;
+
+
+
+                    if (formData.cheap === true) {
+                        inputObject.priceSegment = 'cheap';
+                    };
+                    if (formData.optimal === true) {
+                        inputObject.priceSegment = 'optimal';
+                    };
+                    if (formData.premium === true) {
+                        inputObject.priceSegment = 'premium';
+                    };
+                });
+            };
+            return inputObject;
+        };
+        addInputInFormData(mainInfo);
+        addInputInFormData(priceSegment);
+        addInputInFormData(secondaryInfo);
+
+        let setView = (arr = model) => {
+
+            cardsContainer.innerHTML = '';
+
+            for (let item of arr) {
+
+                let elementContainer = document.createElement('div');
+                let namePicture = document.createElement('div');
+                if (item.picture === null || item.picture === undefined || item.picture === '') {
+                    namePicture.innerHTML = 'No image'
+                } else {
+                    namePicture.innerHTML = `<image src = ${item.picture} height = 150px width = 250px>`
+                };
+                elementContainer.append(namePicture);
+
+                let nameContainer = document.createElement('div');
+                nameContainer.innerHTML = `<b>Name: </b> <i>${item.name}</i>`
+                elementContainer.append(nameContainer);
+
+                let nameArticle = document.createElement('div');
+                nameArticle.innerHTML = `<b>Article: </b> <i>${item.article}</i>`
+                elementContainer.append(nameArticle);
+
+                let nameCount = document.createElement('div');
+                if (item.count === 1 || formData.countInput === 1) {
+                    nameCount.innerHTML =
+                        '<b>Last one<b/>'
+                    nameCount.style.border = 'solid 2px red';
+                    nameCount.style.color = 'red';
+                } else {
+                    nameCount.innerHTML = `<b>Count: </b> <i>${item.count}</i>`
+                };
+                elementContainer.append(nameCount);
+
+                let namePrice = document.createElement('div');
+                namePrice.innerHTML = `<b>Price: </b> <i>${item.price}</i>`
+                elementContainer.append(namePrice);
+
+                let nameDate = document.createElement('div');
+                if (item.creationDate === new Date().toLocaleDateString()) {
+                    nameDate.innerHTML = `<b>Date: </b> <i>${item.creationDate}</i>`
+                } else {
+                    nameDate.innerHTML = `<b>Date: </b> <i>${formData.dateInput}</i>`
+                };
+                elementContainer.append(nameDate);
+
+                let nameDescription = document.createElement('div');
+                if (item.description === null || item.description === undefined) {
+                    nameDescription.innerHTML = ''
+                } else {
+                    nameDescription.innerHTML = `<b>Description: </b> <i>${item.description}</i>`
+                    const blockDescription = document.createElement('blockDescription');
+
+                    const buttonDeleteDescription = document.createElement('button');
+                    buttonDeleteDescription.innerText = 'Description';
+                    buttonDeleteDescription.classList.add('buttonDescription');
+
+                    buttonDeleteDescription.setAttribute('id', 'buttonDeleteDescription');
+                    elementContainer.append(buttonDeleteDescription);
+
+                    buttonDeleteDescription.onclick = function () {
+                        nameDescription.classList.toggle('descriptionBlockNone');
+                    };
+                };
+                elementContainer.append(nameDescription);
+
+                const editButton = document.createElement('input');
+                editButton.type = 'button';
+                editButton.value = 'Edit'
+                editButton.classList.add('buttonEdit');
+                elementContainer.append(editButton)
+
+                editButton.addEventListener('click', (event) => {
+
+                    nameContainer.innerHTML =
+                        `<input type = 'text' value=${`Name: item.name`}><button>Confirm</button>`;
+                    const button0 = nameContainer.querySelector('button');
+
+                    button0.addEventListener('click', event => {
+                        const input = nameContainer.querySelector('input');
+                        nameContainer.innerHTML = `${input.value}`;
+                        const index = arr.indexOf(item);
+                        arr[index] = input.value;
+                    });
+
+                    nameArticle.innerHTML =
+                        `<input type = 'text' value=${`Article: item.article`}><button>Confirm</button>`;
+                    const button1 = nameArticle.querySelector('button');
+
+                    button1.addEventListener('click', event => {
+                        const input = nameArticle.querySelector('input');
+                        nameArticle.innerHTML = `${input.value}`;
+                        const index = arr.indexOf(item);
+                        arr[index] = input.value;
+                    });
+
+                    nameCount.innerHTML =
+                        `<input type = 'text' value=${item.count === 1 ? count() : 'Count: 2'}><button>Confirm</button>`;
+                    const button2 = nameCount.querySelector('button');
+
+                    function count() {
+                        if (item.count === 1) {
+                            nameCount.style.border = '0px';
+                            nameCount.style.color = 'black';
+                        };
+                    };
+
+                    button2.addEventListener('click', event => {
+                        const input = nameCount.querySelector('input');
+                        nameCount.innerHTML = `${input.value}`;
+                        const index = arr.indexOf(item);
+                        arr[index] = input.value;
+                    });
+
+                    namePrice.innerHTML =
+                        `<input type = 'text' value=${`Price: item.price`}><button>Confirm</button>`;
+                    const button3 = namePrice.querySelector('button');
+
+                    button3.addEventListener('click', event => {
+                        const input = namePrice.querySelector('input');
+                        namePrice.innerHTML = `${input.value}`;
+                        const index = arr.indexOf(item);
+                        arr[index] = input.value;
+                    });
+
+                    nameDate.innerHTML =
+                        `<input type = 'text' value=${`Date: item.creationDate`}><button>Confirm</button>`;
+                    const button4 = nameDate.querySelector('button');
+
+                    button4.addEventListener('click', event => {
+                        const input = nameDate.querySelector('input');
+                        nameDate.innerHTML = `${input.value}`;
+                        const index = arr.indexOf(item);
+                        arr[index] = input.value;
+                    });
+
+                    const buttonDeleteCard = document.createElement('button');
+                    elementContainer.append(buttonDeleteCard)
+                    buttonDeleteCard.classList.add('buttonDelete');
+                    buttonDeleteCard.innerText = 'Delete';
+
+                    buttonDeleteCard.addEventListener('click', (event) => {
+                        elementContainer.classList.add('descriptionBlockNone');
+                    });
+                });
+
+
+                if (item.priceSegment === 'cheap') elementContainer.classList.add('cheapStyle');
+                if (item.priceSegment === 'optimal') elementContainer.classList.add('optimalStyle');
+                if (item.priceSegment === 'premium') elementContainer.classList.add('premiumStyle');
+
+                cardsContainer.append(elementContainer);
+                document.body.append(cardsContainer);
+            };
+        };
+
+        // Search for Product
+
+        searchInput.addEventListener('input', (event) => {
+            const filteredListArray = model.filter(item => {
+                return item.name.toLowerCase().startsWith(event.target.value.toLowerCase());
+            });
+
+            setView(
+                filteredListArray
+            );
+        });
+
+        let getCheckboxValues = () => {
+            let checkboxValues = {};
+            for (let item of segmentFilter.elements) {
+                checkboxValues[item.id] = item.checked;
+            };
+            return checkboxValues
+        };
+
+        // Filtration
+
+        for (let item of segmentFilter.elements) {
+            item.addEventListener('input', (event) => {
+                let checkboxState = getCheckboxValues(segmentFilter);
+                if (checkboxState.isCheap && checkboxState.isOptimal && checkboxState.isPremium) {
+                    setView();
+                } else {
+                    let filteredCards = model.filter(item => {
+                        return ((checkboxState.isCheap ? item.priceSegment == 'cheap' : false) ||
+                            (checkboxState.isOptimal ? item.priceSegment == 'optimal' : false) ||
+                            (checkboxState.isPremium ? item.priceSegment == 'premium' : false))
+                    });
+                    setView(filteredCards);
+                };
+            });
+        };
+
+        // Sorting
+
+        for (let item of sortBy.elements) {
+            item.addEventListener('change', (event) => {
+
+                if (byAlphabet.checked) {
+                    const output = model.sort((a, b) => {
+                        return a.name > b.name ? 1 : -1
+                    });
+                    setView(output);
+                };
+
+                if (byPrice.checked) {
+                    const output = model.sort((a, b) => {
+                        return b.price - a.price
+                    });
+                    setView(output);
+                };
+
+                if (byCount.checked) {
+                    const output = model.sort((a, b) => {
+                        return b.count - a.count
+                    });
+                    setView(output);
+                };
+
+                if (byDate.checked) {
+                    const output = model.sort((a, b) => {
+                        a = new Date(a
+                            .dateInput
+                        );
+                        b = new Date(b.dateInput);
+                        if (a < b)
+                            return -1
+                    });
+                    setView(output);
+                };
+            });
+        };
+
+        mainForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            model.unshift(inputObject);
+            console.log(inputObject)
+            inputObject = {};
+
+            setView(model);
+            clearForm(event.target);
+        });
+    </script>
+</body>
+
+</html>
