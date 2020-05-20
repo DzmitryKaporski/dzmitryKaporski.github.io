@@ -114,7 +114,7 @@
                 article: 'A12',
                 count: 88,
                 price: 100,
-                creationDate: new Date().toLocaleDateString(),
+                creationDate: '2020-03-20',
                 priceSegment: 'cheap',
                 description: null,
             },
@@ -125,7 +125,7 @@
                 article: 'A23',
                 count: 185,
                 price: 110,
-                creationDate: new Date().toLocaleDateString(),
+                creationDate: '2020-04-19',
                 priceSegment: 'cheap',
                 description: [
                     `wwwwwwww wwwwwwwwww wwww`
@@ -138,7 +138,7 @@
                 article: 'A33',
                 count: 77,
                 price: 120,
-                creationDate: new Date().toLocaleDateString(),
+                creationDate: '2020-02-18',
                 priceSegment: 'optimal',
                 description: [
                     `wwwwwwww wwwwwwwwww wwww`
@@ -151,7 +151,7 @@
                 article: 'A48',
                 count: 1,
                 price: 130,
-                creationDate: new Date().toLocaleDateString(),
+                creationDate: '2020-02-17',
                 priceSegment: 'premium',
                 description: null,
             },
@@ -162,7 +162,7 @@
                 article: 'A57',
                 count: 1,
                 price: 140,
-                creationDate: new Date().toLocaleDateString(),
+                creationDate: '2020-01-16',
                 priceSegment: 'premium',
                 description: null,
             },
@@ -177,7 +177,7 @@
                 formData.articleInput = '';
                 formData.countInput = '';
                 formData.praceInput = '';
-                formData.dateInput = '';
+                formData.creationDate = '';
                 formData.checkbox = '';
                 formData.description = '';
             };
@@ -249,8 +249,8 @@
         praceInput.min = '1';
         praceInput.required = 'true';
 
-        appendInput(mainInfo, 'date', 'dateInput', 'Creation date');
-        dateInput.required = 'true';
+        appendInput(mainInfo, 'date', 'creationDate', 'Creation date');
+        creationDate.required = 'true';
 
         appendElement(mainForm, 'fieldSet', 'priceSegment');
         appendElement(priceSegment, 'legend');
@@ -366,7 +366,7 @@
                     inputObject.article = formData.articleInput;
                     inputObject.count = formData.countInput;
                     inputObject.price = formData.praceInput;
-                    inputObject.date = formData.dateInput;
+                    inputObject.date = formData.creationDate;
                     inputObject.description = formData.description;
 
                     function getValueRadio() {
@@ -430,10 +430,10 @@
                 elementContainer.append(namePrice);
 
                 let nameDate = document.createElement('div');
-                if (item.creationDate === new Date().toLocaleDateString()) {
+                if (item.creationDate) {
                     nameDate.innerHTML = `Date: ${item.creationDate}`
                 } else {
-                    nameDate.innerHTML = `Date: ${formData.dateInput}`
+                    nameDate.innerHTML = `Date: ${formData.creationDate}`
                 };
                 elementContainer.append(nameDate);
 
@@ -489,7 +489,7 @@
                     changeName.value = item.name;
                     changeArticle.value = item.article;
                     changeCount.value = item.count;
-                    changePrice.value = item.count;
+                    changePrice.value = item.price;
 
                     changeName.addEventListener('input', (event) => {
                         let changeNameEnter = event.target.value.length;
@@ -541,7 +541,8 @@
                         item.name = changeName.value;
                         item.article = changeArticle.value;
                         item.count = changeCount.value;
-                        item.count = changePrice.value;
+                        item.price = changePrice.value;
+                        item.nameDate = 'sdgf';
                         setView();
                     });
                 });
@@ -624,8 +625,8 @@
 
                             if (byDate.checked) {
                                 const output = filteredCards.sort((a, b) => {
-                                    a = new Date(a.dateInput);
-                                    b = new Date(b.dateInput);
+                                    a = new Date(a.creationDate);
+                                    b = new Date(b.creationDate);
                                     if (a < b)
                                         return -1
                                 });
