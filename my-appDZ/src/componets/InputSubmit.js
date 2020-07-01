@@ -1,0 +1,31 @@
+import React from 'react';
+import { Button } from '@material-ui/core';
+import ListFC from './List FC.js';
+
+class InputSubmit extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            arr: [],
+        }
+        this.valueInput = React.createRef();
+    }
+
+    checkRef = () => {
+        this.setState({ arr: this.state.arr.concat(this.valueInput.current.value) })
+    }
+
+    render() {
+        const { arr } = this.state
+        return (
+            <div>
+                <label htmlFor='nameElement'>Name item</label>
+                <input id='nameElement' name='nameElement' type='text' ref={this.valueInput} />
+                <Button color='primary' size="small" onClick={this.checkRef}>Submit</Button>
+                <ListFC arr={arr} isOrdered={false} />
+            </div>
+        )
+    }
+}
+
+export default InputSubmit;
