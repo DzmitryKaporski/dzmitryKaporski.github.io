@@ -4,13 +4,13 @@ class Buttons extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            textColorBlack: false,
+            textColorBlack: true,
             textColorRed: false,
             textColorGreen: false,
         };
     }
 
-    clickHandler = () => {
+    clickHandlerBlack = () => {
         this.setState({
             textColorBlack: true,
             textColorRed: false,
@@ -18,7 +18,7 @@ class Buttons extends React.Component {
         })
     }
 
-    clickHandler1 = () => {
+    clickHandlerRed = () => {
         this.setState({
             textColorBlack: false,
             textColorRed: true,
@@ -26,7 +26,7 @@ class Buttons extends React.Component {
         })
     }
 
-    clickHandler2 = () => {
+    clickHandlerGreen = () => {
         this.setState({
             textColorBlack: false,
             textColorRed: false,
@@ -49,9 +49,9 @@ class Buttons extends React.Component {
                     textColorRed === true ? 'textColorRed' :
                         textColorGreen === true ? 'textColorGreen' : null} >{this.props.title}
 
-                    <button onClick={this.clickHandler} className={classNameBlack}>{titleButtonBlack}</button>
-                    <button onClick={this.clickHandler1} className={classNameRed}>{titleButtonRed}</button>
-                    <button onClick={this.clickHandler2} className={classNameGreen}>{titleButtonGreen}</button>
+                    <button onClick={this.clickHandlerBlack} className={classNameBlack}>{titleButtonBlack}</button>
+                    <button onClick={this.clickHandlerRed} className={classNameRed}>{titleButtonRed}</button>
+                    <button onClick={this.clickHandlerGreen} className={classNameGreen}>{titleButtonGreen}</button>
                 </h1>
             </div >
         )
