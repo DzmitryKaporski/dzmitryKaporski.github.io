@@ -12,11 +12,11 @@ class ListCC extends React.Component {
     render() {
 
         const { isOrdered, arr } = this.state
-        const List = arr.map((item, index) => <li key={index}>{item}</li>)
+        const list = arr.map((item, index) => <li key={index}>{item}</li>)
 
         return (
             <div>
-                {!isOrdered ? <ol>{List}</ol> : isOrdered ? <ul>{List}</ul> : ''}
+                {!isOrdered ? <ol>{list}</ol> : isOrdered ? <ul>{list}</ul> : ''}
             </div>
         )
     }
