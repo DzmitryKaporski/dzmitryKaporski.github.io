@@ -15,8 +15,16 @@ class ListCC extends React.Component {
         const list = arr.map((item, index) => <li key={index}>{item}</li>)
 
         return (
-            <div>
+            <div className='startLeft'>
+                <h1 className='startCenter'>{this.props.title}</h1>
                 {!isOrdered ? <ol>{list}</ol> : isOrdered ? <ul>{list}</ul> : ''}
+                <span >
+                    Создайте компонент «List», который принимает в props два значения: массив строк, и
+                    параметр isOrdered. Если значение isOrdered true, то массив строк должен отображаться
+                    как упорядоченный список (ol), если false, то как неупорядоченный (ul).
+                    Сделайте две отдельных версии. Одна должна быть функциональным компонентом,
+                    другая – классовым.
+                </span>
             </div>
         )
     }

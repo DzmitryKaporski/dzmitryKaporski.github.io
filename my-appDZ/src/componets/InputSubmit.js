@@ -18,11 +18,22 @@ class InputSubmit extends React.Component {
     render() {
         const { arr } = this.state
         return (
-            <div>
-                <label htmlFor='nameElement'>Name item</label>
-                <input id='nameElement' name='nameElement' type='text' ref={this.valueInput} />
-                <Button color='primary' size="small" onClick={this.checkRef}>Submit</Button>
+            <div className='startLeft'>
+                <div className='startCenter'>
+                    <label htmlFor='nameElement'>Name item</label>
+                    <input id='nameElement' name='nameElement' type='text' ref={this.valueInput} />
+                    <Button color='primary' size="small" onClick={this.checkRef}>Submit</Button>
+                </div>
                 <ListFC arr={arr} isOrdered={false} />
+                <span>
+                    Создайте компонент, который включает в себя поле ввода, кнопку Submit и созданный
+                    ранее компонент List.
+                    После нажатия кнопки Submit, значение из поля ввода сохраняется в состоянии
+                    компонета, как элемент массива, который по умолчанию должен быть пустым.
+                    Массив значений передается для отображения с компонет List для отрисовки всех
+                    значений из массива.
+                    Если массив значений пуст, то список отображает сообщение «No items»
+                </span>
             </div>
         )
     }
