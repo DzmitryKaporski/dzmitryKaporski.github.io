@@ -1,4 +1,6 @@
 body {
+  display: flex;
+  justify-content: center;
   margin: 0;
   background: url(https://clck.ru/PRZNJ);
   background-size: cover;

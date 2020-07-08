@@ -1,5 +1,4 @@
 .App {
-  margin-left: 27%;
   margin-top: 100px;
   text-align: center;
   width: 650px;
@@ -9,11 +8,7 @@
 }
 
 .App:hover {
-  border: solid 2px blue;
-}
-
-.App-link {
-  color: #61dafb;
+  border: solid 1.5px blue;
 }
 
 .black {
@@ -74,21 +69,54 @@
   color: white;
 }
 
-.rm {
-  background: red;
-  border-radius: 50%;
-  color: blue;
-}
-
-.rm:hover {
-  color: white;
-  border: solid 1px white;
-}
-
 .done {
   text-decoration: line-through;
 }
 
 .marginTop {
   margin-top: 20px;
+}
+
+.colorLink {
+  color: white;
+}
+
+.linkColor {
+  color: rgba(0, 0, 255, 0.74);
+}
+
+.lincMergin {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.inputWidth {
+  width: 350px;
+  margin-left: 60px;
+  border: solid 1.5px blue;
+}
+
+.inputWidth:hover {
+  border: solid 1.5px green;
+}
+
+.paddingForButton {
+  padding-bottom: 3px;
+}
+
+.itemList {
+  display: flex;
+  justify-content: space-between;
+  align-items: centr;
+  border-bottom: solid 1px blue;
+  border-top: solid 1px blue;
+  border-radius: 10px;
+  padding-right: 5px;
+  margin: 20px 20px 20px 20px;
+  padding-top: 3px;
+}
+
+.itemList:hover {
+  border-bottom: solid 1px green;
+  border-top: solid 1px green;
 }

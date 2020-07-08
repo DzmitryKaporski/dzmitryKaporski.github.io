@@ -4,8 +4,8 @@ class ListCC extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            arr: ['a', 'b', 'c'],
-            isOrdered: true,
+            arr: ['A', 'B', 'C'],
+            isOrdered: false,
         }
     }
 

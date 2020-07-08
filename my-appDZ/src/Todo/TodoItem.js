@@ -1,23 +1,19 @@
 import React, { useContext } from 'react';
 import Context from '../Context';
+import Button from '@material-ui/core/Button';
+import EditIcon from '@material-ui/icons/Edit';
+import EditTodoForm from './EditTodoForm';
+import DeleteIcon from '@material-ui/icons/Delete';
+import ToggleState from './ToggleState';
 
 const style = {
-    li: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'centr',
-        borderBottom: 'solid 1px blue',
-        borderTop: 'solid 1px blue',
-        borderRadius: '10px',
-        paddingRight: '5px',
-        margin: '20px 20px 20px 20px',
-    },
     input: {
         marginRight: '10px'
     }
 }
 
-function TodoItem({ todo, index, onChange }) {
+function TodoItem({ id, title, todo, index, onChange, editTodo, initialVal }) {
+    const [isEditing, toggle] = ToggleState(initialVal)
     const { removeTodo } = useContext(Context)
     const classes = []
 
@@ -26,20 +22,40 @@ function TodoItem({ todo, index, onChange }) {
     }
 
     return (
-        <li style={style.li}>
-            <span className={classes.join(' ')}>
-                <input
-                    type='Checkbox'
-                    checked={todo.completed}
-                    style={style.input}
-                    onChange={() => onChange(todo.id)} />
-                <strong>{index + 1}</strong>
-                &nbsp;
-                {todo.title}
-            </span>
+        <div className='itemList'>
+            {isEditing ? <EditTodoForm editTodo={editTodo} id={id} title={todo.title} toggleEditForm={toggle} /> :
+                <>
+                    <span className={classes.join(' ')}>
+                        <input
+                            type='Checkbox'
+                            checked={todo.completed}
+                            style={style.input}
+                            onChange={() => onChange(todo.id)}
+                        />
+                        <strong>{index + 1}.</strong> &nbsp; {todo.title}
+                    </span>
 
-            <button className='rm' onClick={() => removeTodo(todo.id)}>&times;</button>
-        </li >)
+                    <div className="paddingForButton">
+                        <Button
+                            startIcon={<EditIcon />}
+                            size="small"
+                            color="primary"
+                            variant="outlined"
+                            onClick={toggle}>
+                        </Button>
+                         &nbsp;
+                    <Button
+                            startIcon={<DeleteIcon />}
+                            size="small"
+                            color="secondary"
+                            variant="outlined"
+                            onClick={() => removeTodo(todo.id)}>
+                        </Button>
+                    </div>
+                </>
+            }
+        </div>
+    )
 }
 
 export default TodoItem;

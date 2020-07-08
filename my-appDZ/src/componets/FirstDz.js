@@ -7,21 +7,21 @@ function FirstDz(props) {
             <h1 className='startCenter'>{props.title}</h1>
             <ul className='startLeftList'>
                 <li>
-                    <Link to='/ColoredTitle'>Colored title</Link>
+                    <Link className='colorLink' to='/ColoredTitle'>Colored title</Link>
                 </li>
                 <li>
-                    <Link to='/InputSubmit'>Input submit</Link>
+                    <Link className='colorLink' to='/InputSubmit'>Input submit</Link>
                 </li>
                 <li>
-                    <Link to='/ListCC'>List Class component</Link>
+                    <Link className='colorLink' to='/ListCC'>List Class component</Link>
                 </li>
                 <li>
-                    <Link to='/ListFC'>List Function component</Link></li>
+                    <Link className='colorLink' to='/ListFC'>List Function component</Link></li>
                 <li>
-                    <Link to='/TitleFC'>Title Function component</Link>
+                    <Link className='colorLink' to='/TitleFC'>Title Function component</Link>
                 </li>
                 <li>
-                    <Link to='/TitleCC'>Title Class component</Link>
+                    <Link className='colorLink' to='/TitleCC'>Title Class component</Link>
                 </li>
             </ul>
         </div>

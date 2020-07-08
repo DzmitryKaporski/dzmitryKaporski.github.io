@@ -15,9 +15,9 @@ import AddTodo from "./Todo/AddTodo";
 function App() {
 
   const [todos, setTodos] = React.useState([
-    { id: 1, completed: false, title: 'Купить хлеб' },
-    { id: 2, completed: false, title: 'Купить масло' },
-    { id: 3, completed: false, title: 'Купить молоко' },
+    { id: 1, completed: false, title: 'Buy bread' },
+    { id: 2, completed: false, title: 'Buy oil' },
+    { id: 3, completed: false, title: 'Buy milk' },
   ])
 
   function toggleTodo(id) {
@@ -29,6 +29,13 @@ function App() {
         return todo
       })
     )
+  }
+
+  const editTodo = (id, valueTodo) => {
+    const updateTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, title: valueTodo } : todo
+    )
+    setTodos(updateTodos)
   }
 
   function removeTodo(id) {
@@ -52,21 +59,21 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <div className='marginTop'>
-            <Link to='/FirstDz'>Dz First</Link>
+            <Link className='linkColor' to='/FirstDz'>Dz First (React componets)</Link>
           </div>
-          <div>
-            <Link to='/DzSecond'>Dz Second(Todo List)</Link>
+          <div className='lincMergin'>
+            <Link className='linkColor' to='/DzSecond'>Dz Second (Todo list)</Link>
           </div>
 
           <Switch>
             <Route path='/FirstDz'>
-              <FirstDz title='Dz first' />
+              <FirstDz title='React componets' />
             </Route>
 
             <Route path='/DzSecond'>
               <h1 className='startCenter'>Todo list</h1>
               <AddTodo onCreate={addTodo} />
-              {todos.length ? <TodoList todos={todos} onToggle={toggleTodo} /> :
+              {todos.length ? <TodoList todos={todos} onToggle={toggleTodo} editTodo={editTodo} /> :
                 <h3 className='startCenter'>No todos !</h3>}
             </Route>
 
