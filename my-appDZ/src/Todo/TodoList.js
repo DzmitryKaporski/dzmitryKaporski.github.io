@@ -4,16 +4,16 @@ import TodoItem from './TodoItem';
 function TodoList(props) {
     return (
         <div className='startLeft'>
-            {props.todos.map((todo, index, id, title) => {
+            {props.todos.map((todo, index, id, initialVal) => {
                 return (
                     <TodoItem
-                        id={id}
-                        title={title}
+                        id={todo.id}
                         todo={todo}
                         key={todo.id}
                         index={index}
                         onChange={props.onToggle}
                         editTodo={props.editTodo}
+                        initialVal={initialVal}
                     />
                 )
             })}

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 
 function AddTodo({ onCreate }) {
-
     const [value, setValue] = useState('')
 
     function submitHandler(event) {
@@ -10,7 +9,7 @@ function AddTodo({ onCreate }) {
 
         if (value) {
             onCreate(value)
-            setValue('s')
+            setValue('')
         }
     }
 
@@ -25,7 +24,6 @@ function AddTodo({ onCreate }) {
             <Button type='submit' color="primary">Add todo</Button>
         </form>
     )
-
 }
 
 export default AddTodo;

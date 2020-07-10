@@ -20,6 +20,13 @@ function App() {
     { id: 3, completed: false, title: 'Buy milk' },
   ])
 
+  const editTodo = (id, valueEditTodo) => {
+    const updateTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, title: valueEditTodo } : todo
+    )
+    setTodos(updateTodos)
+  }
+
   function toggleTodo(id) {
     setTodos(
       todos.map(todo => {
@@ -29,13 +36,6 @@ function App() {
         return todo
       })
     )
-  }
-
-  const editTodo = (id, valueTodo) => {
-    const updateTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, title: valueTodo } : todo
-    )
-    setTodos(updateTodos)
   }
 
   function removeTodo(id) {

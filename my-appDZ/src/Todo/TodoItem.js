@@ -12,7 +12,7 @@ const style = {
     }
 }
 
-function TodoItem({ id, title, todo, index, onChange, editTodo, initialVal }) {
+function TodoItem({ id, todo, index, onChange, editTodo, initialVal }) {
     const [isEditing, toggle] = ToggleState(initialVal)
     const { removeTodo } = useContext(Context)
     const classes = []
@@ -23,7 +23,12 @@ function TodoItem({ id, title, todo, index, onChange, editTodo, initialVal }) {
 
     return (
         <div className='itemList'>
-            {isEditing ? <EditTodoForm editTodo={editTodo} id={id} title={todo.title} toggleEditForm={toggle} /> :
+            {isEditing ?
+                <EditTodoForm
+                    id={id}
+                    editTodo={editTodo}
+                    title={todo.title}
+                    toggleEditForm={toggle} /> :
                 <>
                     <span className={classes.join(' ')}>
                         <input
@@ -32,7 +37,9 @@ function TodoItem({ id, title, todo, index, onChange, editTodo, initialVal }) {
                             style={style.input}
                             onChange={() => onChange(todo.id)}
                         />
-                        <strong>{index + 1}.</strong> &nbsp; {todo.title}
+                        <strong>{index + 1}.</strong>
+                        &nbsp;
+                        {todo.title}
                     </span>
 
                     <div className="paddingForButton">
