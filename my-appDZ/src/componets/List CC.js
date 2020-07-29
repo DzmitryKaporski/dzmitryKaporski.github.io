@@ -12,6 +12,7 @@ class ListCC extends React.Component {
     render() {
 
         const { isOrdered, arr } = this.state
+<<<<<<< HEAD
         const list = arr.map((item, index) => <li className='itemListInputSubmit' key={index}>{item}</li>)
 
         return (
@@ -25,6 +26,13 @@ class ListCC extends React.Component {
                     Сделайте две отдельных версии. Одна должна быть функциональным компонентом,
                     другая – классовым.
                 </span>
+=======
+        const list = arr.map((item, index) => <li key={index}>{item}</li>)
+
+        return (
+            <div>
+                {!isOrdered ? <ol>{list}</ol> : isOrdered ? <ul>{list}</ul> : ''}
+>>>>>>> 68ea456e7e7e390c3b0f38b124fcd304f62a1e19
             </div>
         )
     }
