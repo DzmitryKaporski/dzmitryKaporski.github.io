@@ -19,8 +19,8 @@ class InputSubmit extends React.Component {
         const { arr } = this.state
         return (
             <div className='startLeft'>
-                <div className='startCenter'>
-                    <label htmlFor='nameElement'>Name item</label>
+                <div className='styleLabelInputSubmit'>
+                    <label className='labelInputSubmit' htmlFor='nameElement'>Name item</label>
                     <input id='nameElement' name='nameElement' type='text' ref={this.valueInput} />
                     <Button color='primary' size="small" onClick={this.checkRef}>Submit</Button>
                 </div>

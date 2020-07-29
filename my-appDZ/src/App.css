@@ -1,9 +1,10 @@
 .App {
-  margin-top: 100px;
   text-align: center;
+  margin-top: 100px;
   width: 650px;
   height: auto;
   border: solid 1px blue;
+  border-radius: 20px;
   background: rgba(0, 0, 0, 0.685);
 }
 
@@ -15,30 +16,31 @@
   margin-left: 5px;
   margin-right: 5px;
   width: 70px;
-  font-size: 20px;
   border: solid 3px rgba(73, 63, 63, 0.267);
   border-radius: 5px;
   background: black;
+  font-size: 20px;
   color: white;
 }
 
 .red {
   margin-right: 5px;
-  font-size: 20px;
   width: 70px;
   border: solid 3px rgba(143, 19, 19, 0.603);
   border-radius: 5px;
-  background: rgb(255, 0, 0);
+  font-size: 20px;
   color: white;
+  background: rgb(255, 0, 0);
 }
 
 .green {
-  font-size: 20px;
   width: 70px;
   border: solid 3px rgba(43, 66, 43, 0.37);
   border-radius: 5px;
-  background: green;
+  font-size: 20px;
+
   color: white;
+  background: green;
 }
 
 .textColorBlack {
@@ -55,8 +57,13 @@
 
 .startLeft {
   text-align: left;
-  color: white;
   padding: 10px 10px 10px 10px;
+  color: white;
+}
+
+.startCenter {
+  text-align: center;
+  color: white;
 }
 
 .startLeftList {
@@ -64,9 +71,29 @@
   color: white;
 }
 
-.startCenter {
+.itemListInputSubmit {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom: solid 1px blue;
+}
+
+.labelInputSubmit {
+  margin-right: 5px;
+}
+
+.styleLabelInputSubmit {
   text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: solid 1px blue;
+  border-bottom: solid 1px blue;
+  border-radius: 50px;
   color: white;
+}
+
+.styleLabelInputSubmit:hover {
+  border-top: solid 1px green;
+  border-bottom: solid 1px green;
 }
 
 .done {
@@ -85,7 +112,7 @@
   color: rgba(0, 0, 255, 0.74);
 }
 
-.lincMergin {
+.linkMargin {
   margin-top: 5px;
   margin-bottom: 30px;
 }
@@ -108,11 +135,11 @@
   display: flex;
   justify-content: space-between;
   align-items: centr;
+  padding-right: 5px;
+  margin: 20px 20px 20px 20px;
   border-bottom: solid 1px blue;
   border-top: solid 1px blue;
   border-radius: 10px;
-  padding-right: 5px;
-  margin: 20px 20px 20px 20px;
   padding-top: 3px;
 }
 

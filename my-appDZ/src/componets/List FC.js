@@ -3,7 +3,7 @@ import React from 'react';
 function ListFC(props) {
 
     const { arr, isOrdered } = props;
-    const list = arr.map((item, index) => <li key={index}>{item}</li>)
+    const list = arr.map((item, index) => <li className='itemListInputSubmit' key={index}>{item}</li>)
 
     return (
         <div className='startLeft'>

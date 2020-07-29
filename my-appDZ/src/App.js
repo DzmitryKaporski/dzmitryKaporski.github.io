@@ -61,7 +61,7 @@ function App() {
           <div className='marginTop'>
             <Link className='linkColor' to='/FirstDz'>Dz First (React componets)</Link>
           </div>
-          <div className='lincMergin'>
+          <div className='linkMargin'>
             <Link className='linkColor' to='/DzSecond'>Dz Second (Todo list)</Link>
           </div>
 
