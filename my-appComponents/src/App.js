@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Button from "./componets/ColoredTile";
 import Context from './Context';
-import FirstDz from './componets/FirstDz'
+import Dz from './componets/Dz'
 import InputSubmit from './componets/InputSubmit';
 import ListCC from "./componets/List CC";
 import ListFC from "./componets/List FC";
@@ -58,23 +58,25 @@ function App() {
     <Context.Provider value={{ removeTodo }}>
       <div className="App">
         <BrowserRouter>
-          <div className='marginTop'>
-            <Link className='linkColor' to='/FirstDz'>Dz First (React componets)</Link>
+          <div className='App_link__margin-top-20px'>
+            <Link className='App_link-color__color-toggle' to='/Dz'>React componets</Link>
           </div>
-          <div className='linkMargin'>
-            <Link className='linkColor' to='/DzSecond'>Dz Second (Todo list)</Link>
+          <div className='App_link__margin-top-5px'>
+            <Link className='App_link-color__color-toggle' to='/DzSecond'>Todo list</Link>
           </div>
 
           <Switch>
-            <Route path='/FirstDz'>
-              <FirstDz title='React componets' />
+            <Route path='/Dz'>
+              <hr className='main-hr-style'></hr>
+              <Dz title='React componets' />
             </Route>
 
             <Route path='/DzSecond'>
-              <h1 className='startCenter'>Todo list</h1>
+              <hr className='main-hr-style'></hr>
+              <h1 className='todoList_title'>Todo list</h1>
               <AddTodo onCreate={addTodo} />
               {todos.length ? <TodoList todos={todos} onToggle={toggleTodo} editTodo={editTodo} /> :
-                <h3 className='startCenter'>No todos !</h3>}
+                <h3 className='todoList_title'>No todos !</h3>}
             </Route>
 
             <Route path='/TitleFC'>
@@ -97,9 +99,9 @@ function App() {
             <Route path='/ColoredTitle'>
               <Button
                 title='Color title'
-                titleButtonBlack='Black' classNameBlack='black'
-                titleButtonRed='Red' classNameRed='red'
-                titleButtonGreen='Green' classNameGreen='green'
+                titleButtonBlack='Black' classNameBlack='app_coloredTitle_button-color__black'
+                titleButtonRed='Red' classNameRed='app_coloredTitle_button-color__red'
+                titleButtonGreen='Green' classNameGreen='app_coloredTitle_button-color__green'
               />
             </Route>
 

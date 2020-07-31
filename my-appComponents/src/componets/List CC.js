@@ -12,13 +12,14 @@ class ListCC extends React.Component {
     render() {
 
         const { isOrdered, arr } = this.state
-<<<<<<< HEAD
-        const list = arr.map((item, index) => <li className='itemListInputSubmit' key={index}>{item}</li>)
+        const list = arr.map((item, index) => <li className='listCC_list-item-style' key={index}>{item}</li>)
 
         return (
-            <div className='startLeft'>
-                <h1 className='startCenter'>{this.props.title}</h1>
-                {!isOrdered ? <ol>{list}</ol> : isOrdered ? <ul>{list}</ul> : ''}
+            <div className='listCC-wrapper'>
+                <hr className='main-hr-style'></hr>
+                <h1 className='listCC_title-style'>{this.props.title}</h1>
+                {!isOrdered ? <ol className='listCC_list-item'>{list}</ol> : isOrdered ?
+                    <ul className='listCC_list-item'>{list}</ul> : ''}
                 <span >
                     Создайте компонент «List», который принимает в props два значения: массив строк, и
                     параметр isOrdered. Если значение isOrdered true, то массив строк должен отображаться
@@ -26,13 +27,6 @@ class ListCC extends React.Component {
                     Сделайте две отдельных версии. Одна должна быть функциональным компонентом,
                     другая – классовым.
                 </span>
-=======
-        const list = arr.map((item, index) => <li key={index}>{item}</li>)
-
-        return (
-            <div>
-                {!isOrdered ? <ol>{list}</ol> : isOrdered ? <ul>{list}</ul> : ''}
->>>>>>> 68ea456e7e7e390c3b0f38b124fcd304f62a1e19
             </div>
         )
     }

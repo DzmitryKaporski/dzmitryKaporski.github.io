@@ -1,70 +1,46 @@
 .App {
   text-align: center;
+  margin-top: 100px;
+  width: 650px;
+  height: auto;
+  border: solid 1px blue;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.685);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App:hover {
+  border: solid 1.5px blue;
 }
 
 .black {
   margin-left: 5px;
   margin-right: 5px;
   width: 70px;
-  font-size: 20px;
   border: solid 3px rgba(73, 63, 63, 0.267);
   border-radius: 5px;
   background: black;
+  font-size: 20px;
   color: white;
 }
 
 .red {
   margin-right: 5px;
-  font-size: 20px;
   width: 70px;
   border: solid 3px rgba(143, 19, 19, 0.603);
   border-radius: 5px;
-  background: rgb(255, 0, 0);
+  font-size: 20px;
   color: white;
+  background: rgb(255, 0, 0);
 }
 
 .green {
-  font-size: 20px;
   width: 70px;
   border: solid 3px rgba(43, 66, 43, 0.37);
   border-radius: 5px;
-  background: green;
+  font-size: 20px;
+
   color: white;
+  background: green;
 }
 
 .textColorBlack {
@@ -77,4 +53,97 @@
 
 .textColorGreen {
   color: green;
+}
+
+.startLeft {
+  text-align: left;
+  padding: 10px 10px 10px 10px;
+  color: white;
+}
+
+.startCenter {
+  text-align: center;
+  color: white;
+}
+
+.startLeftList {
+  text-align: left;
+  color: white;
+}
+
+.itemListInputSubmit {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom: solid 1px blue;
+}
+
+.labelInputSubmit {
+  margin-right: 5px;
+}
+
+.styleLabelInputSubmit {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: solid 1px blue;
+  border-bottom: solid 1px blue;
+  border-radius: 50px;
+  color: white;
+}
+
+.styleLabelInputSubmit:hover {
+  border-top: solid 1px green;
+  border-bottom: solid 1px green;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.marginTop {
+  margin-top: 20px;
+}
+
+.colorLink {
+  color: white;
+}
+
+.linkColor {
+  color: rgba(0, 0, 255, 0.74);
+}
+
+.linkMargin {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.inputWidth {
+  width: 350px;
+  margin-left: 60px;
+  border: solid 1.5px blue;
+}
+
+.inputWidth:hover {
+  border: solid 1.5px green;
+}
+
+.paddingForButton {
+  padding-bottom: 3px;
+}
+
+.itemList {
+  display: flex;
+  justify-content: space-between;
+  align-items: centr;
+  padding-right: 5px;
+  margin: 20px 20px 20px 20px;
+  border-bottom: solid 1px blue;
+  border-top: solid 1px blue;
+  border-radius: 10px;
+  padding-top: 3px;
+}
+
+.itemList:hover {
+  border-bottom: solid 1px green;
+  border-top: solid 1px green;
 }

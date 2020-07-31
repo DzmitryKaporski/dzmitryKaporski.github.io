@@ -4,7 +4,7 @@ class Buttons extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            textColorBlack: true,
+            textColorBlack: false,
             textColorRed: false,
             textColorGreen: true,
         };
@@ -44,16 +44,17 @@ class Buttons extends React.Component {
         let textColorGreen = this.state.textColorGreen
 
         return (
-            <div>
-                <h1 className={textColorBlack === true ? 'textColorBlack' :
-                    textColorRed === true ? 'textColorRed' :
-                        textColorGreen === true ? 'textColorGreen' : null} >{this.props.title}
+            <div className='coleredTitle-wrapper-padding'>
+                <hr className='main-hr-style'></hr>
+                <h1 className={textColorBlack === true ? 'coleredTitle_text-color__black' :
+                    textColorRed === true ? 'coleredTitle_text-color__red' :
+                        textColorGreen === true ? 'coleredTitle_text-color__green' : null} >{this.props.title}
 
                     <button onClick={this.clickHandlerBlack} className={classNameBlack}>{titleButtonBlack}</button>
                     <button onClick={this.clickHandlerRed} className={classNameRed}>{titleButtonRed}</button>
                     <button onClick={this.clickHandlerGreen} className={classNameGreen}>{titleButtonGreen}</button>
                 </h1>
-                <div className='startLeft'>
+                <div className='coleredTitle_text-style'>
                     Создайте компонент “ColoredTile”, который принимает через props строчное значение
                     text, и отображает его. Компонент должен также включать три кнопки, отвечающие за
                     разные цвета. Например black, red и green.
