@@ -1,0 +1,100 @@
+body {
+    background: url(https://www.soyuz.ru/public/uploads/files/5/7205544/1005x558_20180521150625c8710022c9.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.main-container__page-wrapper {
+    width: 500px;
+    height: auto;
+    margin-left: 35%;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.699);
+    border: solid 1px black;
+}
+
+.main-container__page-wrapper:hover {
+    border: solid 1px blue;
+    box-shadow: 0 0 10px blue;
+}
+
+.page-wrapper-title {
+    text-align: center;
+    font-size: 40px;
+    color: blue;
+    font-family: 'Abril Fatface', cursive;
+    font: bold;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.page-wrapper-img {
+    display: flex;
+    justify-content: center;
+}
+
+.page-wrap__box {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+input[type="submit"] {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border: solid 2px blue;
+    color: blue;
+    border-radius: 30px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+input[type="submit"]:hover {
+    border: solid 5px white;
+    color: white;
+    background: green;
+}
+
+.page-wrap__box-inner-container {
+    display: flex;
+    justify-content: center;
+}
+
+.page-wrap__box-inner-title {
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font: bold;
+    font-size: 25px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.page-wrap__box-inner-container-question_radio {
+    color: white;
+    font-size: 20px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.page-wrap__box-inner-container-question_radio:hover {
+    color: green;
+    font-size: 20px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.page-wrap__answer-checkbox {
+    color: white;
+    font-size: 20px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.page-wrap__answer-checkbox:hover {
+    color: green;
+    font-size: 20px;
+    font-family: 'Abril Fatface', cursive;
+}
