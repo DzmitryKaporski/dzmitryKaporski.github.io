@@ -112,16 +112,7 @@ function App() {
   return (
     <Context.Provider value={{ removeCard }}>
       <div className='app-wrapper'>
-
-        <div className="app-card-list">
-
-          {!stateCheap && !stateOptimal && !statePremium ? <h1 className='message-for-user-text_white'>There are no cards to display !!!</h1> :
-            <CardsList editCard={editCard} cards={searchValue ? getCardSearch : getCardsSortedFiltred} />}
-
-        </div>
-
         <div className="app-search-filter-sort-add-wrap">
-
           <SearchFilterSort
             sortCards={sortCards}
             filterCardsCheap={filterCardsCheap}
@@ -129,11 +120,13 @@ function App() {
             filterCardsPremium={filterCardsPremium}
             getCard={getCard}
           />
-
           <AddCard onCreate={addCard} />
+        </div>
+        <div className="app-card-list">
+          {!stateCheap && !stateOptimal && !statePremium ? <h1 className='message-for-user-text_white'>There are no cards to display !!!</h1> :
+            <CardsList editCard={editCard} cards={searchValue ? getCardSearch : getCardsSortedFiltred} />}
 
         </div>
-
       </div>
     </Context.Provider>
   );
