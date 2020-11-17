@@ -12,6 +12,8 @@
 1. Table. Basics of positioning
 1. Working with Forms
 
+---
+
 ## JS folder content:
 
 1. JS Examine preparations
