@@ -1,4 +1,4 @@
-##HTML & CSS folder content:
+## HTML & CSS folder content:
 
 1. Examine preparations
 1. Adaptive_design
@@ -12,9 +12,7 @@
 1. Table. Basics of positioning
 1. Working with Forms
 
----
-
-##JS folder content:
+## JS folder content:
 
 1. JS Examine preparations
 2. JS Arrow functions. Function expression
@@ -27,7 +25,7 @@
 
 ---
 
-##ReactJS folder content:
+## ReactJS folder content:
 
 1. my-appComponents (Todo, componets)
 2. my-appExam (app)
