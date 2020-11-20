@@ -1,22 +1,22 @@
 ## HTML & CSS folder content:
 
-1. Examine preparations
-1. Adaptive_design
-1. Anchors. Positioning by means of flexes
-1. BEM methodology
-1. BEM_and_refactoring
+1. [Examine preparations](https://clck.ru/S2qxt)
+1. [Adaptive_design](https://clck.ru/S33HY)
+1. [Anchors. Positioning by means of flexes](https://clck.ru/S3GGi)
+1. [BEM methodology](https://clck.ru/S3GPP)
+1. [BEM_and_refactoring](https://clck.ru/S3GTM)
 1. CSS Basics
-1. Flex-box
+1. [Flex-box](https://clck.ru/S3GWW)
 1. Introduction to the WEB-technologies. HTML structure
-1. Padding, work with styles, positioning
-1. Table. Basics of positioning
-1. Working with Forms
+1. [Padding, work with styles, positioning](https://clck.ru/S3GeC)
+1. [Table. Basics of positioning](https://clck.ru/S3Gh5)
+1. [Working with Forms](https://clck.ru/S3GjB)
 
 ---
 
 ## JS folder content:
 
-1. JS Examine preparations
+1. [JS Examine preparations](https://clck.ru/S3Gng)
 2. JS Arrow functions. Function expression
 3. JS Cicles new
 4. JS Cicles
