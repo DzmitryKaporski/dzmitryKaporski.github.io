@@ -1,14 +1,18 @@
 body {
     display: flex;
     justify-content: center;
+    padding: 20px;
+    background: url(https://clck.ru/S3EzN);
+    background-size: cover;
 }
 
-.page {
-    width: 900px;
+.form {
+    width: 365px;
     height: auto;
-    border: solid 2px;
-    margin-left: 180px;
-    background: rgb(235, 192, 114);
+    border: solid 1px white;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 white;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .page-wrapper {
@@ -17,46 +21,25 @@ body {
 }
 
 .page-wrapper__title {
-    border-bottom: solid 2px blue;
-    font-size: 40px;
     text-align: center;
+    margin-top: 10px;
+    border-bottom: solid 2px white;
+    font-size: 18px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .page-wrapper__label {
-    font-size: 25px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .page-wrapper__box {
-    margin-top: 20px;
-}
-
-input[type="submit"] {
-    width: 300px;
-    height: 50px;
-    font-size: 30px;
-    border: solid 5px blue;
-    color: blue;
-    border-radius: 10px;
-}
-
-input[type="submit"]:hover {
-    width: 300px;
-    height: 50px;
-    font-size: 30px;
-    border: solid 5px white;
-    color: white;
-    background: green;
+    margin-top: 15px;
 }
 
 input[type="text"] {
-    height: 30px;
-    width: 800px;
-    border: solid 2px;
-}
-
-input[type="number"] {
+    height: 20px;
+    width: 295px;
     border: solid 2px;
 }
 
@@ -65,8 +48,17 @@ input[type="name"] {
 }
 
 input[type="font-size"] {
-    border: solid 3px;
+    border: solid 2px;
+    height: 19px;
     width: 50px;
+}
+
+.page-wrapper__font-input {
+    margin-left: 30px;
+}
+
+.page-wrapper__choose-title {
+    margin: 5px 0 5px 0;
 }
 
 #style-preset {
@@ -76,13 +68,26 @@ input[type="font-size"] {
 }
 
 #textarea {
-    height: 100px;
-    width: 800px;
+    height: 50px;
+    width: 295px;
+    margin-top: 10px;
+}
+
+.submit-button__wrap {
+    display: flex;
+    justify-content: center;
 }
 
 .submit-button {
-    display: flex;
-    justify-content: center;
+    width: 200px;
+    height: 30px;
+    margin: 10px 0 10px 0;
+}
+
+.submit-button:hover {
+    box-shadow: 0 0 15px 0 rgba(2, 0, 128, 0.452);
+    color: white;
+    background: rgba(2, 0, 128, 0.452);
 }
 
 .page-wrapper__font {
@@ -91,15 +96,12 @@ input[type="font-size"] {
 }
 
 .page-wrapper__font__color {
-    display: flex;
-    justify-content: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 10px;
 }
 
 .page-wrapper__font__font-size {
-    display: flex;
-    justify-content: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
+    margin-top: 2px;
+    font-weight: bold;
+    font-size: 10px;
 }
