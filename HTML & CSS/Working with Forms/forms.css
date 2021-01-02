@@ -11,7 +11,7 @@ body {
     height: auto;
     border: solid 1px white;
     border-radius: 5px;
-    box-shadow: 0 0 20px 0 white;
+    box-shadow: 0 0 20px 0 rgb(8, 8, 114);
     background: rgba(255, 255, 255, 0.5);
 }
 
@@ -82,12 +82,15 @@ input[type="font-size"] {
     width: 200px;
     height: 30px;
     margin: 10px 0 10px 0;
+    color: green;
+    border-radius: 10px;
 }
 
 .submit-button:hover {
     box-shadow: 0 0 15px 0 rgba(2, 0, 128, 0.452);
     color: white;
     background: rgba(2, 0, 128, 0.452);
+    border-radius: 10px;
 }
 
 .page-wrapper__font {
