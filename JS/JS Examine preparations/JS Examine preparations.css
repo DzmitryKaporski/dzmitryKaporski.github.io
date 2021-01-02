@@ -1,4 +1,9 @@
-.submiteButton {
+* {
+    color: white;
+    background: black;
+}
+
+.submitButton {
     margin: 10px 0px 10px 20px;
     height: 25px;
     width: 100px;
@@ -13,7 +18,7 @@
     margin-top: 10px;
     font-size: 15px;
     color: red;
-    border: solid 2px black;
+    border: solid 2px red;
 }
 
 .buttonSave {
@@ -23,13 +28,13 @@
     color: white;
     font-size: 15px;
     background: green;
-    border: solid 2px black;
+    border: solid 2px white;
 }
 
 .buttonDescription {
     margin: '10px 10px 20px 20px';
     width: 250px;
-    border: solid 2px black;
+    border: solid 2px green;
     font-size: 15px;
     color: green;
 }
@@ -38,7 +43,7 @@
     width: 250px;
     color: white;
     background: red;
-    border: solid 2px black;
+    border: solid 2px white;
 }
 
 .cheapStyle {
@@ -66,17 +71,23 @@
 }
 
 .cardsContainer {
-    padding-left: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: auto;
+
 }
 
 .mainForm {
-    padding-left: 20%;
-    padding-right: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .popup {
     position: absolute;
     margin-left: 280px;
+    background: black;
 }
 
 .blockNone {
@@ -87,6 +98,7 @@
     font-size: 10px;
     height: 15px;
     color: red;
+    background: black;
 }
 
 .borderValidation {
