@@ -1,3 +1,5 @@
+'use strict';
+
 const model = [{
     picture: "https://clck.ru/NLWJA",
     name: 'AAAAA',

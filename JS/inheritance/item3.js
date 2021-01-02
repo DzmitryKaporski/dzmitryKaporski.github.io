@@ -40,7 +40,7 @@ class RetroCar {
     }
     goBack() { // Method for class
         console.log(`Full back ${this.nameAuto}`);
-    }
+    };
 };
 const retroAuto = new RetroCar('Retro car', 'BMW', 'black', '1893');
 

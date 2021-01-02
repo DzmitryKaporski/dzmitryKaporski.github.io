@@ -7,14 +7,16 @@ alert(`III. Создайте программу, которая выводит �
 
 let num = +prompt('Enter the first number');
 let numSecond = +prompt('Enter the second number');
+
 while (num <= numSecond) {
     valueNumber()
     num++;
-}
+};
+
 while (num > numSecond) {
     valueNumber()
     num--;
-}
+};
 
 function valueNumber() {
     let resultFractionalNofractional = (num % 1 == 0) ? ' недробное, ' : 'дробное,';
@@ -23,4 +25,4 @@ function valueNumber() {
     let resultMoreLess = (num < 100) ? ' меньше 100! ' : (num > 100) ? ' больше 100! ' : ' равно 100! ';
     console.log(num + resultPlusMinus + resultEvenOld + resultFractionalNofractional +
         resultMoreLess);
-}
+};

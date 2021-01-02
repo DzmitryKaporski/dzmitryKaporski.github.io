@@ -90,7 +90,7 @@ buttonReloadStyle();
 let buttonReload = document.getElementById('reload');
 buttonReload.onmouseenter = function () {
     reload.style.color = 'red';
-    reload.style.border = 'solid 2px red';
+    reload.style.border = 'solid 1px red';
 };
 buttonReload.onmouseleave = function () {
     buttonReloadStyle();

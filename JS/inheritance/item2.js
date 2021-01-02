@@ -1,7 +1,7 @@
 'use strict';
 
 button0.addEventListener('click', function () {
-    swal(`Цепочка наследования состоящая из четырёх классов`)
+    swal(`Цепочка наследования состоящая из четырёх классов.`)
         .then(() => {
             console.log(
                 retroAuto); // Call 'retroAuto' new object with properties and parameters 'RetroCar'

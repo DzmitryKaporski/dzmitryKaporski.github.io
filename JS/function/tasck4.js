@@ -1,3 +1,5 @@
+'use strict';
+
 function involution(firstNumber, secondNumber = 2) {
     if (firstNumber && secondNumber)
         return (Math.pow(firstNumber, secondNumber));

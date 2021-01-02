@@ -1,3 +1,5 @@
+'use strict';
+
 function showMessage(message = 'С уважением, ', name = '') {
 
     if (message && name)

@@ -10,8 +10,9 @@ let numberOfIterations = 0;
 while (numberFirst < numberSecond && numberOfIterations < 7) {
     console.log(numberFirst++);
     numberOfIterations++;
-}
+};
+
 while (numberFirst > numberSecond && numberOfIterations < 7) {
     console.log(numberFirst--);
     numberOfIterations++;
-}
+};

@@ -1,3 +1,5 @@
+'use strict';
+
 function sortString(firstString = 'sss', secondString = 'iii', thirdString = 'zzz') {
     if (firstString < secondString && firstString < thirdString && secondString < thirdString) {
         return firstString + ' ' + secondString + ' ' + thirdString

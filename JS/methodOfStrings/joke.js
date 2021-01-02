@@ -1,3 +1,5 @@
+'use strict';
+
 let button = document.getElementById('button');
 button.addEventListener('click', function () {
     swal(`Тех, кто презирает программистов, 

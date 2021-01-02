@@ -38,7 +38,8 @@ function lineAnalysis(str) {
         sentenceType: sentenceType,
     }
     return object;
-}
+};
+
 console.log(lineAnalysis(firstString));
 console.log(lineAnalysis(secondString));
 console.log(lineAnalysis(thirdString));

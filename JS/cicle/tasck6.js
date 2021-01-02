@@ -23,4 +23,4 @@ if (pin === '1234') {
         puc = prompt('Enter a PUCcode');
     } while (puc != '1111' && entryNumberPuc < 3);
     puc === '1111' ? console.log('Success') : console.log('Sim card is blocked');
-}
+};
