@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <form class="form">
+        <div class="page-wrapper">
+            <div class="page-wrapper__title">
+                Automatic DOM elements generator
+            </div>
+            <div class="page-wrapper__inner">
+                <div class="page-wrapper__box">
+                    <label class="page-wrapper__label" for="element">
+                        Enter type of element:
+                    </label>
+                    <input id="element" type="text" placeholder="html element" value="" name="element" required>
+                </div>
+            </div>
+            <div class="page-wrapper__inner">
+                <div class="page-wrapper__box">
+                    <label class="page-wrapper__label" for="element-class">
+                        Enter element class name:
+                    </label>
+                    <input id="element-class" type="text" placeholder="element-class" value="" name="element-class"
+                        required>
+                </div>
+            </div>
+            <hr>
+            <div class="page-wrapper__choose">
+                <div class="page-wrapper__choose-title"><b>display of element</b></div>
+                <div>
+                    <input id="block" type="radio" value="block" name="element">
+                    <label for="block">block</label>
+                    <br>
+                    <input id="inline" type="radio" value="inline" name="element">
+                    <label for="inline">inline</label>
+                    <br>
+                    <input id="inline-block" type="radio" value="inline-block" name="element">
+                    <label for="inline-block">inline-block</label>
+                    <br>
+                    <input id="flex" type="radio" value="flex" name="element">
+                    <label for="flex">flex</label>
+                    <br>
+                    <input id="none" type="radio" value="none" name="element">
+                    <label for="none">none</label>
+                </div>
+                <div>
+                    <input id="style" type="checkbox" value="style" name="style" checked>
+                    <label for="style"> Activate "important" in style rule </label>
+                    <br>
+                    <input id="autoformat" type="checkbox" value="autoformat" name="autoformat" checked>
+                    <label for="autoformat"> Autoformat rule content</label>
+                </div>
+                <hr>
+                <div class="page-wrapper__style">
+                    <label for="style-preset">
+                        <div page-wrapper__choose-title><b>Choose style preset</b></div>
+                    </label>
+                    <select id="style-preset" name="style-preset" size="3">
+                        <option value="header">header</option>
+                        <option value="footer">footer</option>
+                        <option value="article">article</option>
+                        <option value="section">section</option>
+                        <option value="sidebar">sidebar</option>
+                        <option value="aside">aside</option>
+                        <option disabled value="widget">widget</option>
+                        <option value="page">page</option>
+                    </select>
+                </div>
+                <hr>
+                <div class="page-wrapper__font">
+                    <div class="page-wrapper__font__color">
+                        <div><input id="font-color" type="color" value="" name="color"></div>
+                        <div><label for="font-color"> font color </label></div>
+                    </div>
+                    <div class="page-wrapper__font__color">
+                        <div class="page-wrapper__font-input"><input id="background-color" type="color" value=""
+                                name="color"></div>
+                        <div><label for="background-color"> background color </label></div>
+                    </div>
+                    <div class="page-wrapper__font__font-size">
+                        <div> <input type="font-size" placeholder="0-10"></div>
+                        <div><label for="font-size"> font size </label></div>
+                    </div>
+                </div>
+                <hr>
+                <div><input type="name" name="user" placeholder="name"></div>
+                <div><textarea id="textarea" type="text" name="comment" placeholder="comment"></textarea></div>
+                <div class="submit-button__wrap"><button class="submit-button" type="submit">Submit</button></div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
