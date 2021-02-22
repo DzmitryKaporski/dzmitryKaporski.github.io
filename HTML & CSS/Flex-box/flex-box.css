@@ -3,7 +3,7 @@ body {
     justify-content: center;
 }
 
-.page {
+.page-wrapper {
     width: 1275px;
     border: solid 1px;
     height: auto;
