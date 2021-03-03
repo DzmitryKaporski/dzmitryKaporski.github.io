@@ -6,7 +6,6 @@
 1. [BEM methodology](https://clck.ru/S3GPP)
 1. [BEM_and_refactoring](https://clck.ru/S3GTM)
 1. CSS Basics
-1. [Flex-box](https://clck.ru/S3GWW)
 1. Introduction to the WEB-technologies. HTML structure
 1. [Padding, work with styles, positioning](https://clck.ru/S3GeC)
 1. [Table. Basics of positioning](https://clck.ru/S3Gh5)
