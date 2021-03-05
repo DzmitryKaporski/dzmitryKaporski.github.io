@@ -1,5 +1,5 @@
 body {
-    background: url(https://imgclf.112.ua/original/2015/08/11/176340.jpg?timestamp=1439268323);
+    background: url(https://clck.ru/TPxDn);
     background-size: cover;
     background-attachment: fixed;
 }
@@ -7,7 +7,7 @@ body {
 .part {
     margin-left: 250px;
     margin-right: 250px;
-    background: rgba(184, 165, 165, 0.692);
+    background: rgba(46, 20, 2, 0.521);
     border: solid 2px;
 }
 
@@ -15,6 +15,7 @@ body {
     font-size: 70px;
     margin-top: 50px;
     text-align: center;
+    color: white;
 }
 
 .part2 {
@@ -31,6 +32,17 @@ body {
     position: fixed;
     right: 45px;
     bottom: 45px;
-    color: rgba(255, 255, 255, 0.431);
     border: solid 5px;
+    text-align: center;
+    width: 50px;
+    border: solid 2px saddlebrown;
+    border-radius: 50px;
+    color: saddlebrown;
+    background: rgba(0, 0, 0, 0.274);
+}
+
+.topNubex:hover {
+    border: solid 2px rgb(14, 160, 14);
+    border-radius: 50px;
+    color: rgb(14, 160, 14);
 }
