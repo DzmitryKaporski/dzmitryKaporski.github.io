@@ -9,13 +9,13 @@
 1. Introduction to the WEB-technologies. HTML structure
 1. [Padding, work with styles, positioning](https://clck.ru/S3GeC)
 1. [Table. Basics of positioning](https://clck.ru/S3Gh5)
-1. [Working with Forms](https://clck.ru/S3GjB)
+1. Working with Forms
 
 ---
 
 ## JS folder content:
 
-1. [JS Examine preparations](https://clck.ru/S3Gng)
+1. JS Examine preparations
 2. JS Arrow functions. Function expression
 3. JS Cicles new
 4. JS Cicles
