@@ -2,11 +2,12 @@ body {
     background: url(https://clck.ru/TPxDn);
     background-size: cover;
     background-attachment: fixed;
+    display: flex;
+    justify-content: center;
 }
 
 .part {
-    margin-left: 250px;
-    margin-right: 250px;
+    width: 900px;
     background: rgba(46, 20, 2, 0.521);
     border: solid 2px;
 }
@@ -24,11 +25,12 @@ body {
     margin-top: 30px;
     margin-bottom: 50px;
     padding: 20px;
-    background: white;
+    color: white;
+    background: rgba(0, 0, 0, 0.37);
     border: solid 2px;
 }
 
-.topNubex {
+.topButton {
     position: fixed;
     right: 45px;
     bottom: 45px;
@@ -41,8 +43,17 @@ body {
     background: rgba(0, 0, 0, 0.274);
 }
 
-.topNubex:hover {
+.topButton:hover {
     border: solid 2px rgb(14, 160, 14);
     border-radius: 50px;
     color: rgb(14, 160, 14);
+}
+
+a {
+    text-decoration: none;
+    color: brown;
+}
+
+li {
+    color: brown;
 }

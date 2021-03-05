@@ -10,7 +10,6 @@
 1. [Padding, work with styles, positioning](https://clck.ru/S3GeC)
 1. [Table. Basics of positioning](https://clck.ru/S3Gh5)
 1. Working with Forms
-
 ---
 
 ## JS folder content:
