@@ -51,9 +51,15 @@ body {
 
 a {
     text-decoration: none;
-    color: brown;
+    color: white;
 }
 
 li {
-    color: brown;
+    color: green;
+}
+
+.button {
+    border: solid 1px green;
+    background: green;
+    border-radius: 20px;
 }
