@@ -1,7 +1,7 @@
 ## HTML & CSS folder content:
 
-1. [Examine preparations](https://clck.ru/S2qxt)
-1. [Adaptive_design](https://clck.ru/S33HY)
+1. [Examine preparations](https://clck.ru/rdF3T)
+1. [Adaptive_design](https://dzmitrykaporski.github.io/adaptive-design/Adaptive_design.html)
 1. [Anchors. Positioning by means of flexes](https://clck.ru/S3GGi)
 1. [BEM methodology](https://clck.ru/S3GPP)
 1. [BEM_and_refactoring](https://clck.ru/S3GTM)
