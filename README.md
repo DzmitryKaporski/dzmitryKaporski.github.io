@@ -27,5 +27,5 @@
 
 ## ReactJS folder content:
 
-1. my-appComponents (Todo, componets)
-2. my-appExam (app)
+1. [todo-componets](https://admiring-sinoussi-5ee43b.netlify.app)
+2. [react-app](https://dzmitry-ka-react-app.surge.sh/)
