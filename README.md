@@ -2,7 +2,7 @@
 
 1. [Examine preparations](https://dzmitrykaporski.github.io/HTML%20&%20CSS/Examine%20preparations/Examine%20preparations.html)
 1. [Adaptive_design](https://dzmitrykaporski.github.io/HTML%20&%20CSS/Adaptive_design/Adaptive_design.html)
-1. [Anchors. Positioning by means of flexes] (https://dzmitrykaporski.github.io/HTML%20&%20CSS/Anchors.%20Positioning%20by%20means%20of%20flexes/Anchors.%20Positioning%20by%20means%20of%20flexes..html)
+1. [Anchors. Positioning by means of flexes](https://dzmitrykaporski.github.io/HTML%20&%20CSS/Anchors.%20Positioning%20by%20means%20of%20flexes/Anchors.%20Positioning%20by%20means%20of%20flexes..html)
 1. [BEM methodology](https://dzmitrykaporski.github.io/HTML%20&%20CSS/BEM%20methodology/BEM%20methodology.html)
 1. [BEM_and_refactoring](https://dzmitrykaporski.github.io/HTML%20&%20CSS/BEM_and_refactoring/BEM_and_refactoring.html)
 1. CSS Basics
